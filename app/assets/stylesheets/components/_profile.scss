@@ -1,0 +1,28 @@
+.user-infos {
+  padding: 5em;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  font-weight: lighter;
+  font-family: $body-font;
+  font-size: 16px;
+}
+
+.user {
+  position: relative;
+}
+
+.img-profile {
+  position: absolute;
+  height: 7em;
+  width: 7em;
+  object-fit: cover;
+  object-position: center;
+  top: -0.5em;
+  left: 4em;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border: solid 1px rgba(0,0,0,0.4);
+}

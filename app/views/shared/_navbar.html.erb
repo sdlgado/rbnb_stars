@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <h1>AirBnB Stars</h1>
+  <h1><%= link_to "AirBnB Stars", root_path, class: "btn btn-light"  %></h1>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -16,10 +16,6 @@
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "avatar.png", class: "avatar border-black dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
-          </div>
         </li>
       </ul>
     </div>
@@ -29,7 +25,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My account", "#", class: "dropdown-item" %>
+            <%= link_to "My account", account_path, class: "dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

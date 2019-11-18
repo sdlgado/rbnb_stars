@@ -1,0 +1,39 @@
+<%= render "shared/navbar" %>
+
+
+<div class="row">
+  <!-- encart photo et infos -->
+  <div class="col-lg-4 ">
+    <div class="user">
+      <div class="user-infos flex-column justify-content-center align-items-center mt-5 p-5">
+        <ul class="rounded bg-light shadow-sm py-5">
+          <li class="my-3"><%= @user.username %></li>
+          <li class="my-3"><%= @user.first_name %></li>
+          <li class="my-3"><%= @user.last_name %></li>
+          <li class="my-3"><%= @user.email %></li>
+          <li class="my-3">Member since <%= @user.created_at %></li>
+          <li>
+            <%= link_to "Edit", "#", class: "btn btn-primary mt-5" %>
+          </li>
+        </ul>
+      </div>
+      <%= image_tag "avatar.png", alt: "alttext", class: "big-avatar img-profile" %>
+    </div>
+  </div>
+  <!-- encart your bookings -->
+  <div class="col-lg-8 mt-5 py-5">
+    <div class="bg-light rounded mr-5 p-5 shadow-sm">
+      <h1>Your upcoming bookings</h1>
+      <% @user.bookings.each do |booking| %>
+      <%= booking %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row px-5 mt-1 mx-0">
+  <div class="col-lg-12 bg-light rounded shadow-sm p-5">
+      <h1>Your parts</h1>
+  </div>
+</div>
+
