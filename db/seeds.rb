@@ -14,7 +14,6 @@ tanguy = User.create!({
   password: "azerty"
   })
 
-
 sergio = User.create!({
   username: "Sergio",
   first_name: "Sergio",
@@ -22,7 +21,6 @@ sergio = User.create!({
   email: "sergio.delgado@gmail.com",
   password: "azerty"
   })
-
 
 adelaide = User.create!({
   username: "Adelaide",
@@ -39,8 +37,6 @@ thibaud = User.create!({
   email: "thibaud.allain@gmail.com",
   password: "azerty"
   })
-
-
 
 StarPart.create!({
   name_of_star: "Robert Downey Jr.",
@@ -84,7 +80,7 @@ StarPart.create!({
 
 StarPart.create!({
   name_of_star: "Nicki Minaj",
-  category: "buttom",
+  category: "bottom",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "ass",
   rating: 5,
@@ -101,7 +97,6 @@ StarPart.create!({
   price: 10000,
   user: thibaud
 })
-
 
 StarPart.create!({
   name_of_star: "Gad Elmaleh",
