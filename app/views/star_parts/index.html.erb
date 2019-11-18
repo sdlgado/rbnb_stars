@@ -1,5 +1,30 @@
-<h1>All Parts</h1>
-<% @star_parts.each do |part| %>
-<%= part.name_of_part  %>
-<%= part.name_of_star %>
-<%end %>
+<div class="container mt-5" >
+  <h1 class ="title-products-display animated bounce infinite">Hungry? You get what you want!</h1>
+  <div class="cards">
+    <% @star_parts.each do |part| %>
+      <div class="card-trip">
+        <img src="https://images.unsplash.com/photo-1526758097130-bab247274f58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" />
+        <div class="card-trip-infos">
+          <div>
+            <small>
+              <% count = 0 %>
+              <% part.rating.times do %>
+                <% if part.rating > count %>
+                  <i class="fa fa-star"></i>
+                <% else %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <h5><%= part.name_of_part.capitalize() %></h5>
+            <h6>From: <strong><%= part.name_of_star %></strong></h6>
+          </div>
+        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
+        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
+      </div>
+  </div>
+<% end %>
+</div>
+
+
