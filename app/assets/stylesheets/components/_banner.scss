@@ -1,0 +1,26 @@
+.banner {
+  width: 100vw;
+  height: 90vh;
+  margin: 0;
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.container-text {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 250px 0;
+  h1 {
+    color: white;
+    font-family: $headers-font;
+    font-size: 4em;
+    font-weight: bolder;
+  }
+}

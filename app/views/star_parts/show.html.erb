@@ -1,2 +1,21 @@
-<h1>Show of part</h1>
-<%= link_to "Back to list" star_parts_path %>
+  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaQR8k_us0YtEGQGVOe5xe_nfLimCuUOs69JtQCIWqFijko58n&s);">
+
+  </div>
+
+
+<div class="container">
+
+  <div class="name-of-part">
+  <h1> <%= @star_part.name_of_part%> - <%= @star_part.name_of_star %> </h1>
+  </div>
+  <div>
+    <%= image_tag "avatar.png", class: "avatar" %>
+  </div>
+  <div class="description">
+  <p> <%= @star_part.description %> </p>
+  </div>
+
+
+
+  <%= link_to "Back to list", star_parts_path %>
+</div>

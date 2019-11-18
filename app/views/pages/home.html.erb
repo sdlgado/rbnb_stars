@@ -1,1 +1,9 @@
 <%= render "shared/navbar" %>
+
+<div class="banner">
+  <%= image_tag "landing.png", alt: "alttext" %>
+  <div class="container-text">
+    <h1>Be the brightest star of them all <em>l'espace d'un instant</em></h1>
+    <%= link_to "Discover the parts", star_parts_path, class: "btn btn-light mt-5"  %>
+  </div>
+</div>
