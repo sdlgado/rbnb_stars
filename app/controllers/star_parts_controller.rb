@@ -29,8 +29,11 @@ class StarPartsController < ApplicationController
 
   def update
     @star_part = StarPart.find(params[:id])
-    @star_part.update(star_part_params)
-    redirect_to star_parts_path
+    if @star_part.update(star_part_params)
+       redirect_to star_parts_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -39,8 +42,14 @@ class StarPartsController < ApplicationController
     redirect_to star_parts_path
   end
 
+  private
+
   def set_star_part
     @star_part = StarPart.find(params[:id])
     authorize @star_part
+  end
+
+  def star_part_params
+    params.require(:star_part).permit(:description, :rating, :name_of_part, :name_of_star, :price)
   end
 end
