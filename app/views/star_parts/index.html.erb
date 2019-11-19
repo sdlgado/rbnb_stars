@@ -9,7 +9,9 @@
       <div class="card-trip">
         <%= cl_image_tag(part.photo.key) %>
         <div class="card-trip-infos">
-          <div>
+          <%#= part.name_of_star %>
+          <%#= part.user.email %>
+
             <small>
               <% count = 0 %>
               <% part.rating.times do %>
@@ -26,10 +28,11 @@
             <%= link_to "Book now", "#", class: "btn btn-primary" %>
           </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
+        <div>
         <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
       </div>
-  </div>
-<% end %>
+    </div>
+  <% end %>
 </div>
 <div class="container mt-2 align-content-center" >
   <%= link_to "Back Home", "#", class: "btn btn-danger", id:"button-back-home" %>
