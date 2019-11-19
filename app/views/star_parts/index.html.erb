@@ -7,7 +7,7 @@
   <div class="cards">
     <% @star_parts.each do |part| %>
       <div class="card-trip">
-        <img src="https://images.unsplash.com/photo-1526758097130-bab247274f58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" />
+        <%= cl_image_tag(part.photo.key) %>
         <div class="card-trip-infos">
           <div>
             <small>
