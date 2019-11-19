@@ -28,3 +28,25 @@
   </div>
 <% end %>
 </div>
+
+  <% if policy(StarPart).create? %>
+    <%= link_to "New star_part", new_star_part_path %>
+  <% end %>
+
+<%# @star_parts.each do |star_part| %>
+    <%= star_part.name_of_star %>
+   <%= star_part.description %>
+   <%= star_part.user.email %>
+  <%= link_to 'Show', star_part %>
+  <% if policy(star_part).edit? %>
+    <%= link_to "Update", edit_star_part_path(star_part) %>
+  <% end %>
+
+  <% if policy(star_part).show? %>
+    <%= link_to 'Show', star_part_path(star_part) %>
+  <% end %>
+
+  <% if policy(star_part).destroy? %>
+    <%= link_to 'Destroy', star_part, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
