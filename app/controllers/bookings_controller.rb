@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     star_part_id = params[:star_part_id]
     @booking = Booking.new(start_date: start_date, end_date: end_date, user_id: user_id, star_part_id: star_part_id)
     if @booking.save
-      redirect_to root_path
+      redirect_to account_path
     else
       render :new
     end
