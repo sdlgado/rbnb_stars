@@ -13,9 +13,19 @@
   </div>
   <div class="description">
   <p> <%= @star_part.description %> </p>
+
   </div>
 
 
 
   <%= link_to "Back to list", star_parts_path %>
 </div>
+
+
+
+<% if policy(@star_part).edit? %>
+  <%= link_to "Update", edit_star_part_path(@star_part) %>
+<% end %>
+<% if policy(@star_part).destroy? %>
+  <%= link_to 'Destroy', star_parts_path(@star_part), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
