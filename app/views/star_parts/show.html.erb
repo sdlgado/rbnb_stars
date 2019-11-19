@@ -1,4 +1,4 @@
-  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@star_part.photo.key) %>);">
+  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path(@star_part.photo.key) %>);">
 
   </div>
 
@@ -35,8 +35,7 @@
 </div>
     </div>
 </div>
-
-  <%= link_to "Back to list", star_parts_path %>
+  <%= link_to "Back to list", star_parts_path, class: "btn btn-danger", id:"button-back-home" %>
 </div>
 
 
