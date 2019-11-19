@@ -13,11 +13,11 @@
           <li class="my-3"><%= @user.email %></li>
           <li class="my-3">Member since <%= @user.created_at %></li>
           <li>
-            <%= link_to "Edit", "#", class: "btn btn-primary mt-5" %>
+            <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary mt-5" %>
           </li>
         </ul>
       </div>
-      <%= image_tag "avatar.jpg", alt: "alttext", class: "big-avatar img-profile" %>
+      <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
     </div>
   </div>
   <!-- encart your bookings -->
@@ -60,11 +60,32 @@
 
 <div class="row px-5 mt-1 mx-0">
   <div class="col-lg-12 bg-light rounded shadow-sm p-5">
-      <h1>Your parts</h1>
-      <% @user.star_parts.each do |part| %>
-        <%= part.name_of_star %>
-        <%= part.description %>
-      <% end %>
+    <h1 class="mb-3">Your parts</h1>
+      <div class="cards">
+        <% @user.star_parts.each do |part| %>
+        <div class="card-trip">
+          <%= cl_image_tag part.photo.key, crop: :fill %>
+          <div class="card-trip-infos">
+          <div>
+            <small>
+              <% count = 0 %>
+              <% part.rating.times do %>
+                <% if part.rating > count %>
+                  <i class="fa fa-star"></i>
+                <% else %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <h5><%= part.name_of_part.capitalize() %></h5>
+            <h6>From: <strong><%= part.name_of_star %></strong></h6>
+          </div>
+        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
+        <%= cl_image_tag @user.photo.key, class: "card-trip-user avatar-bordered" %>
+      </div>
+  </div>
+<% end %>
+
   </div>
 </div>
-
