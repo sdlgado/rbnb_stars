@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :account]
 
   def home
+    @star_parts = StarPart.all
   end
 end
