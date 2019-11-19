@@ -23,15 +23,16 @@
                 <% count += 1 %>
               <% end %>
             </small>
+
             <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), "#" %></h5>
             <h6>From: <strong><%= part.name_of_star %></strong></h6>
             <%= link_to "Book now", "#", class: "btn btn-primary" %>
-          </div>
+        </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
         <div>
-        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
+          <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
       </div>
-    </div>
+  </div>
   <% end %>
 </div>
 <div class="container mt-2 align-content-center" >
