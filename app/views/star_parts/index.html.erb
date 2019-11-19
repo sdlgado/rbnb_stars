@@ -1,5 +1,7 @@
+<div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1569198029748-cd12fd4ae3c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=783&q=80)">
+  Get the body of your dreams
+</div>
 <div class="container mt-3" >
-  <h1 class ="title-products-display">Get the body of <strong>your dreams</strong></h1>
   <div class="d-flex justify-content-between ">
     <h2 class ="title-products-collection">Explore our Collection</h1>
     <%= link_to "Add new part", new_star_part_path, class: "btn btn-warning", id: "button-part" %>
@@ -23,7 +25,7 @@
             </small>
             <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
             <h6>From: <strong><%= part.name_of_star %></strong></h6>
-            <i class="fas fa-hand-point-right"> <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
+            <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
           </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
         <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
