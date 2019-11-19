@@ -4,4 +4,21 @@ class StarPart < ApplicationRecord
   validates :rating, inclusion: { in: [0, 1, 2, 3, 4, 5] }, numericality: { only_integer: true }
   validates :category, inclusion: { in: ["head", "bust", "bottom"] }
   has_one_attached :photo
+
+  def unavailable_dates
+    range = []
+    bookings.each do |booking|
+      date = booking.start_date
+      while date != booking.end_date.next_day
+        range << date
+        date = date.next_day
+      end
+    end
+
+    return range.uniq.map do |date|
+      month = date.month.to_s.length == 2 ? "#{date.month}" : "0#{date.month}"
+      day = date.day.to_s.length == 2 ? "#{date.day}" : "0#{date.day}"
+      "#{date.year}-#{month}-#{day}"
+    end
+  end
 end
