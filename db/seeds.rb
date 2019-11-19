@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+puts "starting the seeds"
+puts "reseting instances"
+Booking.destroy_all
+StarPart.destroy_all
+User.destroy_all
+puts "reseting instances done"
+
 require 'open-uri'
 
 tanguy = User.new({
@@ -57,52 +64,52 @@ file = URI.open('https://kitt.lewagon.com/placeholder/users/AdelaideEurope')
 thibaud.photo.attach(io: file, filename: 'ade-image.jpg', content_type: 'image/jpg')
 thibaud.save
 
-part = StarPart.new({
+rdj = StarPart.new({
   name_of_star: "Robert Downey Jr.",
   category: "head",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "hair",
   rating: 4,
-  price: 300
+  price: 3000
 })
 
-part.user_id = tanguy.id
+rdj.user_id = tanguy.id
 
 file = URI.open('https://pmcvariety.files.wordpress.com/2017/03/robert-downey-jr1.jpg?w=1000')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+rdj.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+rdj.save
 
-part = StarPart.new({
+alpacino = StarPart.new({
   name_of_star: "Al Pacino",
   category: "head",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "moustache",
   rating: 4,
-  price: 500
+  price: 5000
 })
 
-part.user_id = tanguy.id
+alpacino.user_id = tanguy.id
 
 file = URI.open('http://www.gstatic.com/tv/thumb/persons/2657/2657_v9_ba.jpg')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+alpacino.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+alpacino.save
 
-part = StarPart.new({
+adriana = StarPart.new({
   name_of_star: "Adriana Lima",
   category: "bottom",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "legs",
   rating: 4,
-  price: 500
+  price: 100000
 })
 
-part.user_id = tanguy.id
+adriana.user_id = tanguy.id
 
 file = URI.open('https://timedotcom.files.wordpress.com/2016/11/adriana-lima-victorias-secret-show.jpg')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+adriana.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+adriana.save
 
-part = StarPart.new({
+badbunny = StarPart.new({
   name_of_star: "Bad Bunny",
   category: "head",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -111,13 +118,13 @@ part = StarPart.new({
   price: 1000,
 })
 
-part.user_id = adelaide.id
+badbunny.user_id = adelaide.id
 
 file = URI.open('https://www.billboard.com/files/styles/article_main_image/public/media/bad-bunny-press-new-2019-billboard-1548.jpg')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+badbunny.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+badbunny.save
 
-part = StarPart.new({
+niki = StarPart.new({
   name_of_star: "Nicki Minaj",
   category: "bottom",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -126,13 +133,13 @@ part = StarPart.new({
   price: 10000
 })
 
-part.user_id = adelaide.id
+niki.user_id = adelaide.id
 
 file = URI.open('https://thegrio.com/wp-content/uploads/2019/08/NKGettyImages-1147440912-1.jpg')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+niki.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+niki.save
 
-part = StarPart.new({
+jason = StarPart.new({
   name_of_star: "Jason Statham",
   category: "bust",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -141,13 +148,13 @@ part = StarPart.new({
   price: 10000
 })
 
-part.user_id = thibaud.id
+jason.user_id = thibaud.id
 
 file = URI.open('https://images.indianexpress.com/2018/04/jason-statham-759.jpg?w=759')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+jason.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+jason.save
 
-part = StarPart.new({
+gad = StarPart.new({
   name_of_star: "Gad Elmaleh",
   category: "head",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -156,13 +163,13 @@ part = StarPart.new({
   price: 6000
 })
 
-part.user_id = thibaud.id
+gad.user_id = thibaud.id
 
 file = URI.open('https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/gad-elmaleh/5995182-7-fre-FR/Gad-Elmaleh.jpg')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+gad.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+gad.save
 
-part = StarPart.new({
+jolie = StarPart.new({
   name_of_star: "Angelina Jolie",
   category: "head",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -171,13 +178,13 @@ part = StarPart.new({
   price: 8000
 })
 
-part.user_id = adelaide.id
+jolie.user_id = adelaide.id
 
 file = URI.open('https://resizing.flixster.com/dw4wOkaagNRyWUqbRCvm3I4701I=/1778x1920/v1.cjs0OTA3MztqOzE4MjI1OzEyMDA7MTc3ODsxOTIw')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+jolie.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+jolie.save
 
-part = StarPart.new({
+lebron = StarPart.new({
   name_of_star: "LeBron James",
   category: "bust",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -186,13 +193,13 @@ part = StarPart.new({
   price: 20000
 })
 
-part.user_id = sergio.id
+lebron.user_id = sergio.id
 
 file = URI.open('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+lebron.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+lebron.save
 
-part = StarPart.new({
+scarlett = StarPart.new({
   name_of_star: "Scarlett Johansson",
   category: "bust",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -200,69 +207,69 @@ part = StarPart.new({
   rating: 5,
   price: 50000
 })
-part.user_id = thibaud.id
+scarlett.user_id = thibaud.id
 
 file = URI.open('https://s1.r29static.com/bin/entry/cf2/720x864,85/2220755/image.webp')
-part.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-part.save
+scarlett.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+scarlett.save
 
 Booking.create!(
   start_date: Time.new(2020, 1, 1, 22, 35, 0),
   end_date: Time.new(2020, 1, 19, 22, 35, 0),
-  user_id: 1,
-  star_part_id: 2
+  user_id: thibaud.id,
+  star_part_id: scarlett.id
   )
 
 Booking.create!(
   start_date: Time.new(2019, 1, 1, 22, 35, 0),
   end_date: Time.new(2019, 8, 19, 22, 35, 0),
-  user_id: 1,
-  star_part_id: 1
+  user_id: sergio.id,
+  star_part_id: gad.id
   )
 
 Booking.create!(
   start_date: Time.new(2020, 1, 1, 22, 35, 0),
   end_date: Time.new(2020, 1, 19, 22, 35, 0),
-  user_id: 2,
-  star_part_id: 4
+  user_id: adelaide.id,
+  star_part_id: jolie.id
   )
 
 Booking.create!(
   start_date: Time.new(2019, 1, 1, 22, 35, 0),
   end_date: Time.new(2019, 8, 19, 22, 35, 0),
-  user_id: 2,
-  star_part_id: 10
+  user_id: sergio.id,
+  star_part_id: alpacino.id
   )
 
 Booking.create!(
   start_date: Time.new(2020, 1, 1, 22, 35, 0),
   end_date: Time.new(2020, 1, 19, 22, 35, 0),
-  user_id: 3,
-  star_part_id: 6
+  user_id: tanguy.id,
+  star_part_id: jason.id
   )
 
 Booking.create!(
   start_date: Time.new(2019, 1, 1, 22, 35, 0),
   end_date: Time.new(2019, 8, 19, 22, 35, 0),
-  user_id: 3,
-  star_part_id: 7
+  user_id: thibaud.id,
+  star_part_id: niki.id
   )
 
 Booking.create!(
   start_date: Time.new(2020, 1, 1, 22, 35, 0),
   end_date: Time.new(2020, 1, 19, 22, 35, 0),
-  user_id: 4,
-  star_part_id: 6
+  user_id: thibaud.id,
+  star_part_id: adriana.id
   )
 
 Booking.create!(
   start_date: Time.new(2019, 1, 1, 22, 35, 0),
   end_date: Time.new(2019, 8, 19, 22, 35, 0),
-  user_id: 4,
-  star_part_id: 8
+  user_id: adelaide.id,
+  star_part_id: jason.id
   )
 
-
+puts "Seeds finished"
 
 
 
