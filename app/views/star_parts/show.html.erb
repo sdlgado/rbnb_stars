@@ -3,20 +3,38 @@
   </div>
 
 
-<div class="container">
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h4 class="text-primary"><%= @star_part.name_of_part.capitalize %></h4>
+      <h5> Artist: <strong><%= @star_part.name_of_star %></strong></h6>
+      <h5> Rating:
+      <% count = 0 %>
+        <% @star_part.rating.times do %>
+          <% if @star_part.rating > count %>
+            <i class="fa fa-star text-danger"></i>
+          <% else %>
+            <i class="fa fa-star text-danger"></i>
+          <% end %>
+          <% count += 1 %>
+        <% end %></h5>
+      <br>
+      <h6> <strong> Description: </strong> <h6>
+      <p> <%= @star_part.description %> </p>
+      <div class="d-flex justify-content-between ">
+        <h5> <strong>Price:</strong> €  <%= @star_part.price %> </h5>
+      </div>
+    </div>
 
-  <div class="name-of-part">
-  <h1> <%= @star_part.name_of_part%> - <%= @star_part.name_of_star %> </h1>
-  </div>
-  <div>
-    <%= image_tag "avatar.png", class: "avatar" %>
-  </div>
-  <div class="description">
-  <p> <%= @star_part.description %> </p>
-
-  </div>
-
-
+    <div class="col">
+      <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+        <span><strong>Yay!</strong> 🎉 you successfully signed in to our service.</span>
+         <a data-dismiss="alert" aria-label="Close">
+        <i class="fas fa-times"></i>
+  </a>
+</div>
+    </div>
+</div>
 
   <%= link_to "Back to list", star_parts_path %>
 </div>
@@ -29,3 +47,5 @@
 <% if policy(@star_part).destroy? %>
   <%= link_to 'Destroy', star_parts_path(@star_part), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+
