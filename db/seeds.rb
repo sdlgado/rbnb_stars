@@ -22,6 +22,7 @@ tanguy = User.new({
   last_name: "Blondiaux",
   email: "tanguy.blondiaux@gmail.com",
   password: "azerty"
+
   })
 
 file = URI.open('https://kitt.lewagon.com/placeholder/users/Tanguy75')

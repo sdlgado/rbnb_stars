@@ -36,3 +36,11 @@
 <% if policy(@star_part).destroy? %>
   <%= link_to 'Destroy', star_part_path(@star_part), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw'] %>"
+></div>
