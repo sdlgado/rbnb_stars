@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
   <h1><%= link_to image_tag('Stars-u-kif.jpg'), root_path  %></h1>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,13 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Add new part", "#", class: "btn btn-warning mb-3", id: "button-part" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link btn btn-light" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn btn-light" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "avatar.png", class: "avatar border-black dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "brad.jpg", class: "avatar border-black dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </li>
       </ul>
     </div>
