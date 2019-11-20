@@ -11,10 +11,10 @@ class StarPartsController < ApplicationController
     @star_part = StarPart.find(params[:id])
     # @star_part = StarPart.geocoded # returns flats with coordinates
     @markers =
-      {
+      [{
         lat: @star_part.latitude,
         lng: @star_part.longitude
-      }
+      }]
 
   end
 
