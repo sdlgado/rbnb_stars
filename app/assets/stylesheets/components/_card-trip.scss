@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  min-width: 400px;
 }
 
 .card-trip .part-img {
@@ -35,5 +36,9 @@
   right: 16px;
   top: -20px;
   width: 60px;
+}
+
+.flex-item {
+  min-width: 400px;
 }
 

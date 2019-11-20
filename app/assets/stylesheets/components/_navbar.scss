@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: white;
   position: sticky;
+  align-items: center;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -9,6 +10,10 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.mr-auto {
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-brand img {

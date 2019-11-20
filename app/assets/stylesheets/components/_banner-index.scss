@@ -1,16 +1,18 @@
 .banner-index {
   background-size: cover;
   background-position: center;
-  height: 230px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  padding: 20px 20px;
+  height: 30vh;
   color: white;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: bolder;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 30px rgba(0,0,0,0.2);
-  text-transform: uppercase;
-  letter-spacing:5px;
+  #category {
+    padding: 20px 40px;
+    width: 500px;
+    font-size: 16px;
+    color: $light-gray;
+  }
 }
