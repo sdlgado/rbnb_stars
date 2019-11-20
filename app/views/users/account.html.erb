@@ -41,7 +41,7 @@
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
               </div>
             </div>
-            <%= link_to "Cancel", star_part_booking_path(booking.star_part.id, booking.id), method: :delete, class: "btn btn-danger mr-3"  %>
+            <%= link_to "Cancel", star_part_booking_path(booking.star_part.id, booking.id), method: :delete, class: "btn btn-danger mr-3", data: { confirm: 'Are you sure?' }  %>
 
           </div>
         <% end %>
@@ -78,9 +78,10 @@
                   </div>
                   <div class="modal-body">
                         <%= simple_form_for [booking.star_part, Booking.new] do |f| %>
-                        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                        <%= f.submit class: "btn btn-success"%>
+                        <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+                        <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+                        <%= f.input :price, as: :string, disabled: true, input_html: {value: booking.star_part.price} %>
+                        <%= f.submit "Book", class: "btn btn-success"%>
                         <% end %>
 
                         <% booking.star_part.unavailable_dates.each do |date|%>
@@ -101,34 +102,35 @@
   </div>
 </div>
 
-<div class="row px-5 mt-1 mx-0">
-  <div class="col-lg-12 bg-light rounded shadow-sm p-5">
-    <h1 class="mb-3">Your parts</h1>
-      <div class="cards">
-        <% @user.star_parts.each do |part| %>
-        <div class="card-trip">
-          <%= cl_image_tag part.photo.key, crop: :fill %>
-          <div class="card-trip-infos">
+<div class="container mt-3" >
+  <div class="d-flex justify-content-end ">
+  </div>
+  <div class="cards">
+    <% @user.star_parts.each do |part| %>
+      <div class="card-trip">
+        <%= cl_image_tag part.photo.key %>
+        <div class="card-trip-infos">
           <div>
             <small>
               <% count = 0 %>
               <% part.rating.times do %>
                 <% if part.rating > count %>
-                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star text-danger"></i>
                 <% else %>
-                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star text-danger"></i>
                 <% end %>
                 <% count += 1 %>
               <% end %>
             </small>
-            <h5><%= part.name_of_part.capitalize() %></h5>
+            <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
             <h6>From: <strong><%= part.name_of_star %></strong></h6>
+            <%= link_to "Edit", edit_star_part_path(part), class: "btn btn-primary" %></i>
+            <%= link_to "Delete", star_part_path(part), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></i>
           </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
-        <%= cl_image_tag @user.photo.key, class: "card-trip-user avatar-bordered" %>
+        <%= image_tag @user.photo, alt: "alttext", class: "card-trip-user avatar-bordered" %>
+        </div>
       </div>
-  </div>
-<% end %>
-
+    <% end %>
   </div>
 </div>

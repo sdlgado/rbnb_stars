@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to account_path
     else
+      @booking = Booking.new
       render :new
     end
   end
