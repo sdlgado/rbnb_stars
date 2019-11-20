@@ -12,7 +12,9 @@
       <% @best_parts.shuffle.each do |part| %>
         <li class="flex-item">
         <div class="card-trip">
-        <%= cl_image_tag(part.photo.key) %>
+          <%= link_to star_part_path(part) do %>
+            <%= cl_image_tag(part.photo.key, class: "part-img") %>
+          <% end %>
         <div class="card-trip-infos">
           <div class="text-left">
             <small>
@@ -45,7 +47,9 @@
       <% @bottom_parts.shuffle.each do |part| %>
         <li class="flex-item">
         <div class="card-trip">
-        <%= cl_image_tag(part.photo.key) %>
+        <%= link_to star_part_path(part) do %>
+            <%= cl_image_tag(part.photo.key, class: "part-img") %>
+          <% end %>
         <div class="card-trip-infos">
           <div class="text-left">
             <small>
@@ -78,7 +82,9 @@
       <% @nice_faces.shuffle.each do |part| %>
         <li class="flex-item">
         <div class="card-trip">
-        <%= cl_image_tag(part.photo.key) %>
+        <%= link_to star_part_path(part) do %>
+            <%= cl_image_tag(part.photo.key, class: "part-img") %>
+          <% end %>
         <div class="card-trip-infos">
           <div class="text-left">
             <small>
