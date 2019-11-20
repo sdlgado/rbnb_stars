@@ -1,6 +1,7 @@
 .banner-show {
+  background-size: contain;
   background-position: center;
-  padding: 150px 0;
-  height: 50vh;
-  background-image: "../images/Arnold_pic.png";
+  height: 230px;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
 }

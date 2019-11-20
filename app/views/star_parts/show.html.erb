@@ -1,11 +1,13 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path(@star_part.photo.key) %>);">
-</div>
-
 <div class="container mt-4">
+  <%= link_to "Back to list", star_parts_path, class: "btn btn-primary  mb-2", id:"button-back-home" %>
+
   <div class="row">
-    <div class="col">
+    <div class="col rounded bg-light shadow-sm py-5 m-2">
+      <%= cl_image_tag(@star_part.photo.key, :width => 500) %>
+    </div>
+    <div class="col rounded bg-light shadow-sm py-5 flex-column m-2">
       <h4 class="text-primary"><%= @star_part.name_of_part.capitalize %></h4>
-      <h5> Artist: <strong><%= @star_part.name_of_star %></strong></h6>
+      <h5> Artist: <strong><%= @star_part.name_of_star %></strong></h5>
       <h5> Rating:
       <% count = 0 %>
         <% @star_part.rating.times do %>
@@ -16,23 +18,54 @@
           <% end %>
           <% count += 1 %>
         <% end %></h5>
+      <h6> Category: <%= @star_part.category.capitalize %></h6>
+
       <br>
       <h6> <strong> Description: </strong> <h6>
       <p> <%= @star_part.description %> </p>
       <div class="d-flex justify-content-between ">
         <h5> <strong>Price:</strong> €  <%= @star_part.price %> </h5>
       </div>
-    </div>
+      <br>
+      <button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#exampleModal">
+        Book Now!
+      </button>
+      <br>
+      <br>
+  <% if policy(@star_part).edit? && policy(@star_part).destroy? %>
 
-    <div class="col">
+  <% if policy(@star_part).edit? %>
+    <%= link_to "Update", edit_star_part_path(@star_part), class: "btn-sm btn-secondary mt-5 mb-5" %>
+  <% end %>
+  or
+  <% if policy(@star_part).destroy? %>
+    <%= link_to 'Delete', star_part_path(@star_part), class: "btn-sm btn-secondary mt-5 mb-5", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <% end %>
     </div>
   </div>
-  <%= link_to "Back to list", star_parts_path, class: "btn btn-danger mb-5", id:"button-back-home" %>
-</div>
 
-<% if policy(@star_part).edit? %>
-  <%= link_to "Update", edit_star_part_path(@star_part) %>
-<% end %>
-<% if policy(@star_part).destroy? %>
-  <%= link_to 'Destroy', star_part_path(@star_part), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <%= simple_form_for [@star_part, Booking.new] do |f| %>
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.submit class: "btn btn-success"%>
+            <% end %>
+
+            <% @star_part.unavailable_dates.each do |date|%>
+              <div class="unavailable-dates" data-unavailable=<%= date %>></div>
+            <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
