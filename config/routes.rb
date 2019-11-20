@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   resources :star_parts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     # resources :star_parts, only:[:destroy], as: :star_parts
   # end
+
+  resources :star_parts do
+    resources :bookings, only: [:new, :create]
+  end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
