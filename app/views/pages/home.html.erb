@@ -6,12 +6,12 @@
   </div>
 </div>
 
-<div class="container mt-5">
-
-<h2>THE best star parts</h2>
-  <div class="cards siema m-5">
-    <% @star_parts.shuffle.each do |part| %>
-    <div class="card-trip carousel_item">
+<div class="container-home m-5">
+  <h2>THE best rated body parts</h2>
+    <ul class="flex-container">
+      <% @best_parts.shuffle.each do |part| %>
+        <li class="flex-item">
+        <div class="card-trip">
         <%= cl_image_tag(part.photo.key) %>
         <div class="card-trip-infos">
           <div>
@@ -28,67 +28,81 @@
             </small>
             <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
             <h6>From: <strong><%= part.name_of_star %></strong></h6>
-              </div>
+            <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
+          </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
         <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
         </div>
       </div>
-    <% end %>
-  </div>
-
-<h2>The most beautiful legs</h2>
-  <div class="cards siema2 m-5">
-    <% @star_parts.shuffle.each do |part| %>
-    <div class="card-trip carousel_item">
-        <%= cl_image_tag(part.photo.key) %>
-        <div class="card-trip-infos">
-          <div>
-            <small>
-              <% count = 0 %>
-              <% part.rating.times do %>
-                <% if part.rating > count %>
-                  <i class="fa fa-star text-danger"></i>
-                <% else %>
-                  <i class="fa fa-star text-danger"></i>
-                <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
-            <h6>From: <strong><%= part.name_of_star %></strong></h6>
-              </div>
-        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
-        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-<h2>Available in Paris</h2>
-  <div class="cards siema3 m-5">
-    <% @star_parts.shuffle.each do |part| %>
-    <div class="card-trip carousel_item">
-        <%= cl_image_tag(part.photo.key) %>
-        <div class="card-trip-infos">
-          <div>
-            <small>
-              <% count = 0 %>
-              <% part.rating.times do %>
-                <% if part.rating > count %>
-                  <i class="fa fa-star text-danger"></i>
-                <% else %>
-                  <i class="fa fa-star text-danger"></i>
-                <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
-            <h6>From: <strong><%= part.name_of_star %></strong></h6>
-              </div>
-        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
-        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+        <% end %>
+        </li>
+    </ul>
 </div>
+
+<div class="container-home m-5">
+  <h2>Want to be a bad ass with a good ass?</h2>
+    <ul class="flex-container">
+      <% @bottom_parts.shuffle.each do |part| %>
+        <li class="flex-item">
+        <div class="card-trip">
+        <%= cl_image_tag(part.photo.key) %>
+        <div class="card-trip-infos">
+          <div>
+            <small>
+              <% count = 0 %>
+              <% part.rating.times do %>
+                <% if part.rating > count %>
+                  <i class="fa fa-star text-danger"></i>
+                <% else %>
+                  <i class="fa fa-star text-danger"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
+            <h6>From: <strong><%= part.name_of_star %></strong></h6>
+            <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
+          </div>
+        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
+        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
+        </div>
+      </div>
+        <% end %>
+        </li>
+    </ul>
+</div>
+
+<div class="container-home m-5">
+  <h2>Or are you more into a cute face?</h2>
+    <ul class="flex-container">
+      <% @nice_faces.shuffle.each do |part| %>
+        <li class="flex-item">
+        <div class="card-trip">
+        <%= cl_image_tag(part.photo.key) %>
+        <div class="card-trip-infos">
+          <div>
+            <small>
+              <% count = 0 %>
+              <% part.rating.times do %>
+                <% if part.rating > count %>
+                  <i class="fa fa-star text-danger"></i>
+                <% else %>
+                  <i class="fa fa-star text-danger"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
+            <h6>From: <strong><%= part.name_of_star %></strong></h6>
+            <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
+          </div>
+        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
+        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
+        </div>
+      </div>
+        <% end %>
+        </li>
+    </ul>
+</div>
+
+

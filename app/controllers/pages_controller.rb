@@ -5,5 +5,8 @@ class PagesController < ApplicationController
 
   def home
     @star_parts = StarPart.all
+    @best_parts = StarPart.where(rating: 5)
+    @nice_faces = StarPart.where(category: "head")
+    @bottom_parts = StarPart.where(category: "bottom")
   end
 end
