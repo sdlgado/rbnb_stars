@@ -75,11 +75,11 @@ rdj = StarPart.new({
 })
 
 rdj.user_id = tanguy.id
-
+puts 'a'
 file = URI.open('https://pmcvariety.files.wordpress.com/2017/03/robert-downey-jr1.jpg?w=1000')
 rdj.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 rdj.save
-
+puts 'b'
 alpacino = StarPart.new({
   name_of_star: "Al Pacino",
   category: "head",
@@ -92,7 +92,7 @@ alpacino = StarPart.new({
 
 alpacino.user_id = tanguy.id
 
-file = URI.open('https://c.wallhere.com/photos/de/91/al_pacino_brooding_man_actor_celebrity_beard_mustache_eyes-733663.jpg!d')
+file = URI.open('https://ca-times.brightspotcdn.com/dims4/default/91640a9/2147483647/strip/true/crop/2048x1365+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F48%2Ff9%2F323abcf91726d4bfc01ac2aed81e%2F2367517-ca-1113-al-pacino-04-rrd-jpg-20150114')
 alpacino.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 alpacino.save
 
