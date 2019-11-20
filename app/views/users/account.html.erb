@@ -14,17 +14,19 @@
           <li class="my-3"><%= @user.email %></li>
           <h3 class="text-justify">Member since</h3>
           <li class="my-3"><%= @user.created_at %></li>
-          <li>
-            <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary mt-5" %>
+          <li class="text-right">
+            <%= link_to edit_user_registration_path, class: "text-gray edition" do %>
+              <i class="fas fa-pen-square"></i>
+            <% end %>
           </li>
         </ul>
       </div>
-      <% if @user.photo.attached? %>
-        <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
-      <% else %>
-        <%= image_tag "brad.jpg", alt: "alttext", class: "big-avatar img-profile" %>
-      <% end %>
-    </div>
+        <% if @user.photo.attached? %>
+          <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
+        <% else %>
+          <%= image_tag "brad.jpg", alt: "alttext", class: "big-avatar img-profile" %>
+        <% end %>
+      </div>
   </div>
   <!-- encart your bookings -->
   <div class="col-lg-8 mt-5 py-5">
@@ -41,7 +43,9 @@
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
               </div>
             </div>
-            <%= link_to "Cancel", star_part_booking_path(booking.star_part.id, booking.id), method: :delete, class: "btn btn-danger mr-3", data: { confirm: 'Are you sure?' }  %>
+            <%= link_to star_part_booking_path(booking.star_part.id, booking.id), method: :delete, data: { confirm: 'Are you sure?' } do  %>
+              <i class="fas fa-trash text-gray mr-3"></i>
+            <% end %>
 
           </div>
         <% end %>
@@ -56,14 +60,13 @@
               <div class="profil-part-info-text">
                 <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
-              </div>
-            </div>
-            <div class="actions d-flex">
-              <%= link_to "leave a review", "#", class: "btn btn-primary mr-3"  %>
-              <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="link-rose" data-toggle="modal" data-target="#exampleModal">
                 Book Again
               </button>
+              </div>
             </div>
+
+            <%= link_to "leave a review", "#", class: "bg-rose mr-3"  %>
 
             <!-- Modal -->
 
@@ -102,35 +105,41 @@
   </div>
 </div>
 
-<div class="container mt-3" >
+<div class="card-container mt-3" >
   <div class="d-flex justify-content-end ">
   </div>
   <div class="cards">
     <% @user.star_parts.each do |part| %>
-      <div class="card-trip">
-        <%= cl_image_tag part.photo.key, class: "part-img" %>
-        <div class="card-trip-infos">
-          <div>
-            <small>
-              <% count = 0 %>
-              <% part.rating.times do %>
-                <% if part.rating > count %>
-                  <i class="fa fa-star text-danger"></i>
-                <% else %>
-                  <i class="fa fa-star text-danger"></i>
+        <div class="card-trip rounded">
+          <%= cl_image_tag part.photo.key, class: "part-img" %>
+          <div class="card-trip-infos">
+            <div class="text-justify">
+              <small>
+                <% part.rating.times do %>
+                    <i class="fa fa-star text-rose"></i>
                 <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
-            <h6>From: <strong><%= part.name_of_star %></strong></h6>
-            <%= link_to "Edit", edit_star_part_path(part), class: "btn btn-primary" %></i>
-            <%= link_to "Delete", star_part_path(part), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></i>
+                <% (5 - part.rating).times do %>
+                    <i class="far fa-star text-rose"></i>
+                <% end %>
+              </small>
+              <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
+            </div>
+          <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
+          <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>
           </div>
-        <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
-        <%= image_tag @user.photo, alt: "alttext", class: "card-trip-user avatar-bordered" %>
+          <div class="d-flex justify-content-between py-1 px-3">
+            <%= link_to edit_star_part_path(part), class: "text-gray" do %>
+              <i class="fas fa-pen-square"></i>
+            <% end %>
+            <%= link_to star_part_path(part), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-gray ml-2" do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
+
+
+

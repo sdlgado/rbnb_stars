@@ -3,8 +3,23 @@ class StarPartsController < ApplicationController
 
   def index
     # @star_parts = StarPart.all
-    @star_parts = policy_scope(StarPart).order(created_at: :desc) # Pundit
+    if params[:category]
+      if user_signed_in?
+        @star_parts_all = policy_scope(StarPart).where.not(user_id: current_user.id).order(created_at: :desc)
+      else
+        @star_parts_all = policy_scope(StarPart).order(created_at: :desc)
+      end
+        @star_parts = @star_parts_all.where(category: params[:category])
+    else
+      @star_parts_all = policy_scope(StarPart).order(created_at: :desc) # Pundit
+      if user_signed_in?
+        @star_parts = policy_scope(StarPart).where.not(user_id: current_user.id).order(created_at: :desc) # Pundit
+      else
+        @star_parts = policy_scope(StarPart).order(created_at: :desc) # Pundit
+      end
+    end
     @best_parts = StarPart.where(rating: 5)
+    @categories = StarPart.all.map { |star_part| star_part.category }.uniq
   end
 
   def show

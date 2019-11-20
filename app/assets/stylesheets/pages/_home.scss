@@ -4,12 +4,18 @@ body {
   background-color: white;
 }
 
+
+.border-bottom-rose h2 {
+  font-weight: bolder;
+  font-family: $headers-font;
+  font-size: 1.5em;
+  padding-bottom: .5em;
+  color: $light-gray;
+}
+
 .container-home {
   margin: 3em auto !important;
   width: 95vw;
-  h2 {
-    color: rgba(0,0,0,0.6);
-  }
 }
 
 .flex-container {

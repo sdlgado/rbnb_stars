@@ -4,9 +4,16 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :account]
 
   def home
-    @star_parts = StarPart.all
-    @best_parts = StarPart.where(rating: 5)
-    @nice_faces = StarPart.where(category: "head")
-    @bottom_parts = StarPart.where(category: "bottom")
+    if user_signed_in?
+      @star_parts = StarPart.all.where.not(user_id: current_user.id)
+      @best_parts = StarPart.where(rating: 5).where.not(user_id: current_user.id)
+      @nice_faces = StarPart.where(category: "head").where.not(user_id: current_user.id)
+      @bottom_parts = StarPart.where(category: "bottom").where.not(user_id: current_user.id)
+    else
+      @star_parts = StarPart.all
+      @best_parts = StarPart.where(rating: 5)
+      @nice_faces = StarPart.where(category: "head")
+      @bottom_parts = StarPart.where(category: "bottom")
+    end
   end
 end
