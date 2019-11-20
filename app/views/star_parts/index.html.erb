@@ -1,10 +1,16 @@
 <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1569198029748-cd12fd4ae3c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=783&q=80)">
-  Get the body of your dreams
+  <p>Get the body of your dreams</p>
+  <p><%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+    <% end %></p>
+  </div>
 </div>
 <div class="container mt-3" >
-  <div class="d-flex justify-content-between ">
-    <h2 class ="title-products-collection">Explore our Collection</h1>
-    <%= link_to "Add new part", new_star_part_path, class: "btn btn-warning", id: "button-part" %>
+  <div class="d-flex justify-content-end ">
   </div>
   <div class="cards">
     <% @star_parts.each do |part| %>
@@ -25,7 +31,7 @@
             </small>
             <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
             <h6>From: <strong><%= part.name_of_star %></strong></h6>
-            <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
+            <%= link_to "More Info", star_part_path(part), class: "btn btn-primary" %></i>
           </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
         <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
@@ -35,5 +41,5 @@
   </div>
 </div>
 <div class="container mt-2 align-content-center" >
-  <%= link_to "Back Home", root_path, class: "btn btn-danger mb-5", id:"button-back-home" %>
+  <%= link_to "Return Home", root_path, class: "btn btn-warning mb-5", id:"button-back-home" %>
 </div>

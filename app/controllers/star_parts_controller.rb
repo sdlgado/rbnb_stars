@@ -39,6 +39,8 @@ class StarPartsController < ApplicationController
     redirect_to star_parts_path
   end
 
+  private
+
   def set_star_part
     @star_part = StarPart.find(params[:id])
     authorize @star_part
