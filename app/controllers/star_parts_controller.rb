@@ -4,6 +4,7 @@ class StarPartsController < ApplicationController
   def index
     # @star_parts = StarPart.all
     @star_parts = policy_scope(StarPart).order(created_at: :desc) # Pundit
+    @best_parts = StarPart.where(rating: 5)
   end
 
   def show
