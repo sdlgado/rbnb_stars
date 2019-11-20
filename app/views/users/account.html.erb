@@ -2,19 +2,28 @@
   <!-- encart photo et infos -->
   <div class="col-lg-4 ">
     <div class="user">
-      <div class="user-infos flex-column justify-content-center align-items-center mt-5 p-5">
+      <div class="user-infos flex-column justify-content-center align-items-start mt-5 p-5">
         <ul class="rounded bg-light shadow-sm py-5">
+          <h3 class="text-justify">Username</h3>
           <li class="my-3"><%= @user.username %></li>
+          <h3 class="text-justify">First Name</h3>
           <li class="my-3"><%= @user.first_name %></li>
+          <h3 class="text-justify">Last Name</h3>
           <li class="my-3"><%= @user.last_name %></li>
+          <h3 class="text-justify">Email</h3>
           <li class="my-3"><%= @user.email %></li>
-          <li class="my-3">Member since <%= @user.created_at %></li>
+          <h3 class="text-justify">Member since</h3>
+          <li class="my-3"><%= @user.created_at %></li>
           <li>
             <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary mt-5" %>
           </li>
         </ul>
       </div>
-      <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
+      <% if @user.photo.attached? %>
+        <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
+      <% else %>
+        <%= image_tag "brad.jpg", alt: "alttext", class: "big-avatar img-profile" %>
+      <% end %>
     </div>
   </div>
   <!-- encart your bookings -->
