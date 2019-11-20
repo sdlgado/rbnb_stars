@@ -6,5 +6,4 @@ import { initCarousel } from '../components/carousel';
 import { navbarTransparent } from '../components/navbar';
 
 toggleDateInputs();
-initCarousel();
 navbarTransparent();

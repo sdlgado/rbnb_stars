@@ -1,5 +1,23 @@
 // Specific CSS for your home-page
 // Smallest device
+body {
+  background-color: white;
+}
+
+.container-home {
+  margin: 3em auto !important;
+  width: 95vw;
+  h2 {
+    color: rgba(0,0,0,0.6);
+  }
+}
+
+.flex-container {
+  margin: 0 !important;
+  width: 90vw;
+  background-color: white;
+}
+
 @media (min-width: 100px) and (max-width: 575px) {
   .container-text {
     grid-template-columns: 1fr;
