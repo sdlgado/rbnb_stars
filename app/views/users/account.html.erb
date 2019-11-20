@@ -33,7 +33,7 @@
       <h1>Your upcoming bookings</h1>
       <% @user.bookings.each do |booking| %>
         <% if booking.start_date > Time.now %>
-          <div class="rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
+          <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
             <div class="profile-part-info-left d-flex justify-content-start align-items-center">
               <%= image_tag booking.star_part.photo, alt: "alttext" %>
               <div class="profil-part-info-text">
@@ -50,7 +50,7 @@
       <h1>Your 3 latest bookings</h1>
       <% @user.bookings[0..3].each do |booking| %>
         <% if booking.start_date < Time.now %>
-          <div class="rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
+          <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
             <div class="profile-part-info-left d-flex justify-content-start align-items-center">
               <%= image_tag booking.star_part.photo, alt: "alttext" %>
               <div class="profil-part-info-text">

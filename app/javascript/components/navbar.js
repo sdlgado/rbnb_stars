@@ -8,4 +8,4 @@ const navbarTransparent = () => {
   }
 }
 
-export {navbarTransparent}
+export { navbarTransparent }
