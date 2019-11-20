@@ -1,6 +1,6 @@
-<h1>Edit your part</h1>
-<%= simple_form_for @star_part do |f| %>
+<h1>Here, create a new Part !</h1>
 
+<%= simple_form_for @star_part do |f| %>
   <%= f.input :name_of_star %>
   <%= f.input :name_of_part %>
   <%= f.input :rating %>
@@ -9,7 +9,7 @@
   <%= f.input :category %>
   <%= f.input :photo, as: :file %>
 
-  <%= f.submit "Change it !", class: 'btn btn-primary' %>
+  <%= f.submit "Let's create it !", class: 'btn btn-primary'%>
 <% end %>
 
 <p><%=link_to "Back to list", star_parts_path%></p>
