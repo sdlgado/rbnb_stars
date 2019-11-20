@@ -1,5 +1,5 @@
 class StarPartsController < ApplicationController
-    before_action :set_star_part, only: [:show, :edit, :update, :destroy]
+  before_action :set_star_part, only: [:show, :edit, :update, :destroy]
 
   def index
     # @star_parts = StarPart.all
@@ -11,7 +11,7 @@ class StarPartsController < ApplicationController
   end
 
   def new
-    @star_part = current_user.star_parts.new
+    @star_part = StarPart.new
     authorize @star_part
   end
 
@@ -20,17 +20,19 @@ class StarPartsController < ApplicationController
   end
 
   def create
-    @star_part = current_user.star_parts.new(star_part_params)
+    @star_part = StarPart.new(star_part_params.merge(user: current_user)) # pour le user_id
     authorize @star_part
-    if @star_part.save
-      redirect_to @star_part
-    end
+    @star_part.save!
+    redirect_to star_parts_path
   end
 
   def update
     @star_part = StarPart.find(params[:id])
-    @star_part.update(star_part_params)
-    redirect_to star_parts_path
+    if @star_part.update(star_part_params)
+      redirect_to star_parts_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -44,5 +46,9 @@ class StarPartsController < ApplicationController
   def set_star_part
     @star_part = StarPart.find(params[:id])
     authorize @star_part
+  end
+
+  def star_part_params
+    params.require(:star_part).permit(:description, :rating, :name_of_part, :name_of_star, :price, :category, :user_id, :photo)
   end
 end
