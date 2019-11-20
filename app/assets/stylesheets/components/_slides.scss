@@ -1,4 +1,29 @@
-.carousel_item {
-  box-shadow: inset 0 0 0 1px #ddd;
-  margin: 1rem;
+.flex-container {
+  list-style: none;
+  margin: 0px;
+  display: flex;
+  background-color: #E8EAF6;
+  width: 90%;
+  overflow-x: auto;
+  padding: 12px;
+
+  .flex-item {
+    background-color: #C5CAE9;
+    width: 350px;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.flex-item:not(:last-of-type) {
+      margin-right: 12px;
+    }
+  }
+
+  &::after {
+    content: '';
+    flex: 0 0 12px;
+  }
 }
