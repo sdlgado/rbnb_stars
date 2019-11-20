@@ -70,7 +70,7 @@ rdj = StarPart.new({
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "hair",
   rating: 4,
-  price: 300
+  price: 3000
 })
 
 rdj.user_id = tanguy.id
@@ -85,7 +85,7 @@ alpacino = StarPart.new({
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "moustache",
   rating: 4,
-  price: 500
+  price: 5000
 })
 
 alpacino.user_id = tanguy.id
@@ -100,7 +100,7 @@ adriana = StarPart.new({
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   name_of_part: "legs",
   rating: 4,
-  price: 500
+  price: 100000
 })
 
 adriana.user_id = tanguy.id

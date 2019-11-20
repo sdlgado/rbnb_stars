@@ -1,0 +1,13 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-lg-4 col-10 bg-light rounded shadow-sm p-3">
+    <%= simple_form_for [@star_part, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.submit class: "btn btn-success"%>
+    <% end %>
+
+    <% @star_part.unavailable_dates.each do |date|%>
+      <div class="unavailable-dates" data-unavailable=<%= date %>></div>
+    <% end %>
+  </div>
+</div>

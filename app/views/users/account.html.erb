@@ -1,23 +1,29 @@
-<%= render "shared/navbar" %>
-
-
 <div class="row">
   <!-- encart photo et infos -->
   <div class="col-lg-4 ">
     <div class="user">
-      <div class="user-infos flex-column justify-content-center align-items-center mt-5 p-5">
+      <div class="user-infos flex-column justify-content-center align-items-start mt-5 p-5">
         <ul class="rounded bg-light shadow-sm py-5">
+          <h3 class="text-justify">Username</h3>
           <li class="my-3"><%= @user.username %></li>
+          <h3 class="text-justify">First Name</h3>
           <li class="my-3"><%= @user.first_name %></li>
+          <h3 class="text-justify">Last Name</h3>
           <li class="my-3"><%= @user.last_name %></li>
+          <h3 class="text-justify">Email</h3>
           <li class="my-3"><%= @user.email %></li>
-          <li class="my-3">Member since <%= @user.created_at %></li>
+          <h3 class="text-justify">Member since</h3>
+          <li class="my-3"><%= @user.created_at %></li>
           <li>
             <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary mt-5" %>
           </li>
         </ul>
       </div>
-      <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
+      <% if @user.photo.attached? %>
+        <%= image_tag @user.photo, alt: "alttext", class: "big-avatar img-profile" %>
+      <% else %>
+        <%= image_tag "brad.jpg", alt: "alttext", class: "big-avatar img-profile" %>
+      <% end %>
     </div>
   </div>
   <!-- encart your bookings -->
@@ -29,28 +35,65 @@
         <% if booking.start_date > Time.now %>
           <div class="rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
             <div class="profile-part-info-left d-flex justify-content-start align-items-center">
-              <%= image_tag "https://images.unsplash.com/photo-1573496267526-08a69e46a409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80", alt: "alttext" %>
+              <%= image_tag booking.star_part.photo, alt: "alttext" %>
               <div class="profil-part-info-text">
                 <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
               </div>
             </div>
+            <%= link_to "Cancel", star_part_booking_path(booking.star_part.id, booking.id), method: :delete, class: "btn btn-danger mr-3"  %>
+
           </div>
         <% end %>
       <% end %>
       <!-- passed -->
-      <h1>Your previous bookings</h1>
-      <% @user.bookings.each do |booking| %>
+      <h1>Your 3 latest bookings</h1>
+      <% @user.bookings[0..3].each do |booking| %>
         <% if booking.start_date < Time.now %>
           <div class="rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
             <div class="profile-part-info-left d-flex justify-content-start align-items-center">
-              <%= image_tag "https://images.unsplash.com/photo-1573496267526-08a69e46a409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80", alt: "alttext" %>
+              <%= image_tag booking.star_part.photo, alt: "alttext" %>
               <div class="profil-part-info-text">
                 <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
               </div>
             </div>
-            <%= link_to "leave a review", "#", class: "btn btn-primary mr-3"  %>
+            <div class="actions d-flex">
+              <%= link_to "leave a review", "#", class: "btn btn-primary mr-3"  %>
+              <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#exampleModal">
+                Book Again
+              </button>
+            </div>
+
+            <!-- Modal -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        <%= simple_form_for [booking.star_part, Booking.new] do |f| %>
+                        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                        <%= f.submit class: "btn btn-success"%>
+                        <% end %>
+
+                        <% booking.star_part.unavailable_dates.each do |date|%>
+                          <div class="unavailable-dates" data-unavailable=<%= date %>></div>
+                        <% end %>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- end of modal -->
+
           </div>
         <% end %>
       <% end %>
