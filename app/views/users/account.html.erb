@@ -108,7 +108,7 @@
   <div class="cards">
     <% @user.star_parts.each do |part| %>
       <div class="card-trip">
-        <%= cl_image_tag part.photo.key %>
+        <%= cl_image_tag part.photo.key, class: "part-img" %>
         <div class="card-trip-infos">
           <div>
             <small>

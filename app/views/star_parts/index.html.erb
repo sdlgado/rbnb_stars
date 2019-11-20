@@ -16,7 +16,7 @@
     <% @star_parts.each do |part| %>
       <div class="card-trip">
         <%= link_to star_part_path(part) do %>
-          <%= cl_image_tag(part.photo.key, class: "part-img") %>
+          <%= cl_image_tag part.photo.key, class: "part-img" %>
             <% end  %>
         <div class="card-trip-infos">
           <div>
