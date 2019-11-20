@@ -22,7 +22,6 @@ tanguy = User.new({
   last_name: "Blondiaux",
   email: "tanguy.blondiaux@gmail.com",
   password: "azerty"
-
   })
 
 file = URI.open('https://kitt.lewagon.com/placeholder/users/Tanguy75')
@@ -71,7 +70,8 @@ rdj = StarPart.new({
   description: "No bad hair day anymore… and you don't even have to buy a wig!",
   name_of_part: "hair",
   rating: 4,
-  price: 3000
+  price: 3000,
+  address: "55 rue de la Paix, Paris"
 })
 
 rdj.user_id = tanguy.id
@@ -86,7 +86,8 @@ alpacino = StarPart.new({
   description: "Moustaches are back in trend… get yours!",
   name_of_part: "moustache",
   rating: 4,
-  price: 5000
+  price: 5000,
+  address: "25 avenue Michel Bizot, Paris"
 })
 
 alpacino.user_id = tanguy.id
@@ -101,7 +102,8 @@ adriana = StarPart.new({
   description: "Get those superb legs to be the queen of the beach",
   name_of_part: "legs",
   rating: 4,
-  price: 100000
+  price: 100000,
+  address: "57 rue du paradis, Paris"
 })
 
 adriana.user_id = tanguy.id
@@ -117,6 +119,7 @@ badbunny = StarPart.new({
   name_of_part: "teeth",
   rating: 3,
   price: 1000,
+  address: "60 avenue Daumesnil, Paris"
 })
 
 badbunny.user_id = adelaide.id
@@ -131,7 +134,8 @@ niki = StarPart.new({
   description: "With this butt, you'll be a twerking pro in the blink of an eye",
   name_of_part: "butt",
   rating: 5,
-  price: 10000
+  price: 10000,
+  address: "16 Villa Gaudelet, Paris"
 })
 
 niki.user_id = adelaide.id
@@ -146,7 +150,8 @@ jason = StarPart.new({
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
   rating: 5,
-  price: 10000
+  price: 10000,
+  address: "20 rue de Tolbiac, Paris"
 })
 
 jason.user_id = thibaud.id
@@ -161,7 +166,8 @@ gad = StarPart.new({
   description: "Beautiful blue eyes to match the color of the sea during your holidays at the beach",
   name_of_part: "eyes",
   rating: 5,
-  price: 6000
+  price: 6000,
+  address: "48 rue du Louvre, Paris"
 })
 
 gad.user_id = thibaud.id
@@ -176,7 +182,8 @@ jolie = StarPart.new({
   description: "Imagine the kisses you'll give with those lips. You'll even want to kiss yourself",
   name_of_part: "lips",
   rating: 5,
-  price: 8000
+  price: 8000,
+  address: "30 avenue Daumesnil, Paris"
 })
 
 jolie.user_id = adelaide.id
@@ -191,7 +198,8 @@ lebron = StarPart.new({
   description: "Aaaaaand, duuuuuunk! These arms will give you superpowers… use with caution",
   name_of_part: "arms",
   rating: 4,
-  price: 20000
+  price: 20000,
+  address: "10 rue de Rivoli, Paris"
 })
 
 lebron.user_id = sergio.id
@@ -206,7 +214,8 @@ scarlett = StarPart.new({
   description: "With this bust, we bet you will you want to show off your cleavage all day long… Look me in the eyes!",
   name_of_part: "breasts",
   rating: 5,
-  price: 50000
+  price: 50000,
+  address: "30 rue de la Paix, Paris"
 })
 scarlett.user_id = thibaud.id
 
@@ -221,7 +230,8 @@ kim = StarPart.new({
   description: "Isn't this butt famous for crashing the Internet? You need it!",
   name_of_part: "butt",
   rating: 5,
-  price: 30000
+  price: 30000,
+  address: "55 avenue Michel Bizot, Paris"
 })
 
 kim.user_id = sergio.id
@@ -236,7 +246,9 @@ jenniferlopez = StarPart.new({
   description: "Curves, curves, curves!",
   name_of_part: "butt",
   rating: 3,
-  price: 1500
+  price: 1500,
+  address: "1330 Vine St
+Los Angeles, CA 90028, États-Unis"
 })
 
 jenniferlopez.user_id = adelaide.id
@@ -251,7 +263,10 @@ queenb = StarPart.new({
   description: "So many hours of practice in just one click 👇 Book now",
   name_of_part: "butt",
   rating: 3,
-  price: 90000
+  price: 90000,
+  address: "2100-2154 Canyon Dr
+  Los Angeles, CA 90068
+  États-Unis"
 })
 
 queenb.user_id = sergio.id
@@ -266,7 +281,9 @@ cardib = StarPart.new({
   description: "Caution: this butt might bust out!",
   name_of_part: "butt",
   rating: 3,
-  price: 90000
+  price: 90000,
+  address: "1741-1701 N Las Palmas Ave
+  Los Angeles, CA 90028, États-Unis"
 })
 
 cardib.user_id = tanguy.id
