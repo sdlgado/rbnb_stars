@@ -7,7 +7,6 @@ class StarPart < ApplicationRecord
   validate :active_star_part
   has_one_attached :photo
 
- last-routes
   # private
   # def main_picture_cloudinary
   #   return unless photo.attached?
@@ -18,6 +17,8 @@ class StarPart < ApplicationRecord
     if photo.attached? == false
       errors.add(:photo, "is not active")
     else
+    end
+  end
 
   def unavailable_dates
     range = []
