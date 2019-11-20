@@ -22,6 +22,7 @@ tanguy = User.new({
   last_name: "Blondiaux",
   email: "tanguy.blondiaux@gmail.com",
   password: "azerty"
+
   })
 
 file = URI.open('https://kitt.lewagon.com/placeholder/users/Tanguy75')
@@ -67,7 +68,7 @@ thibaud.save
 rdj = StarPart.new({
   name_of_star: "Robert Downey Jr.",
   category: "head",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "No bad hair day anymore… and you don't even have to buy a wig!",
   name_of_part: "hair",
   rating: 4,
   price: 3000
@@ -82,7 +83,7 @@ rdj.save
 alpacino = StarPart.new({
   name_of_star: "Al Pacino",
   category: "head",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "Moustaches are back in trend… get yours!",
   name_of_part: "moustache",
   rating: 4,
   price: 5000
@@ -90,14 +91,14 @@ alpacino = StarPart.new({
 
 alpacino.user_id = tanguy.id
 
-file = URI.open('http://www.gstatic.com/tv/thumb/persons/2657/2657_v9_ba.jpg')
+file = URI.open('https://c.wallhere.com/photos/de/91/al_pacino_brooding_man_actor_celebrity_beard_mustache_eyes-733663.jpg!d')
 alpacino.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 alpacino.save
 
 adriana = StarPart.new({
   name_of_star: "Adriana Lima",
   category: "bottom",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "Get those superb legs to be the queen of the beach",
   name_of_part: "legs",
   rating: 4,
   price: 100000
@@ -105,14 +106,14 @@ adriana = StarPart.new({
 
 adriana.user_id = tanguy.id
 
-file = URI.open('https://timedotcom.files.wordpress.com/2016/11/adriana-lima-victorias-secret-show.jpg')
+file = URI.open('https://www.fashiongonerogue.com/wp-content/uploads/2019/03/Adriana-Lima-Schutz-Resort-2019-Campaign03.jpg')
 adriana.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 adriana.save
 
 badbunny = StarPart.new({
   name_of_star: "Bad Bunny",
   category: "head",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "Diamond teeth… Sparkle from head to mouth",
   name_of_part: "teeth",
   rating: 3,
   price: 1000,
@@ -120,29 +121,29 @@ badbunny = StarPart.new({
 
 badbunny.user_id = adelaide.id
 
-file = URI.open('https://www.billboard.com/files/styles/article_main_image/public/media/bad-bunny-press-new-2019-billboard-1548.jpg')
+file = URI.open('https://images1.miaminewtimes.com/imager/u/original/10269091/bad-bunny2.jpg')
 badbunny.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 badbunny.save
 
 niki = StarPart.new({
   name_of_star: "Nicki Minaj",
   category: "bottom",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  name_of_part: "ass",
+  description: "With this butt, you'll be a twerking pro in the blink of an eye",
+  name_of_part: "butt",
   rating: 5,
   price: 10000
 })
 
 niki.user_id = adelaide.id
 
-file = URI.open('https://thegrio.com/wp-content/uploads/2019/08/NKGettyImages-1147440912-1.jpg')
+file = URI.open('https://galoremag.com/wp-content/uploads/2015/06/galore_mag_nicki1-1024x576.jpg')
 niki.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 niki.save
 
 jason = StarPart.new({
   name_of_star: "Jason Statham",
   category: "bust",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
   rating: 5,
   price: 10000
@@ -150,14 +151,14 @@ jason = StarPart.new({
 
 jason.user_id = thibaud.id
 
-file = URI.open('https://images.indianexpress.com/2018/04/jason-statham-759.jpg?w=759')
+file = URI.open('https://i.ytimg.com/vi/VtbS8mNpgus/maxresdefault.jpg')
 jason.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 jason.save
 
 gad = StarPart.new({
   name_of_star: "Gad Elmaleh",
   category: "head",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "Beautiful blue eyes to match the color of the sea during your holidays at the beach",
   name_of_part: "eyes",
   rating: 5,
   price: 6000
@@ -165,29 +166,29 @@ gad = StarPart.new({
 
 gad.user_id = thibaud.id
 
-file = URI.open('https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/gad-elmaleh/5995182-7-fre-FR/Gad-Elmaleh.jpg')
+file = URI.open('https://s3.amazonaws.com/webassets.ticketmob.com/LS/images/comedians/BDCAB0C9-B940-0484-9FFE4ECFB657E030.jpg')
 gad.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 gad.save
 
 jolie = StarPart.new({
   name_of_star: "Angelina Jolie",
   category: "head",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  name_of_part: "libs",
+  description: "Imagine the kisses you'll give with those lips. You'll even want to kiss yourself",
+  name_of_part: "lips",
   rating: 5,
   price: 8000
 })
 
 jolie.user_id = adelaide.id
 
-file = URI.open('https://resizing.flixster.com/dw4wOkaagNRyWUqbRCvm3I4701I=/1778x1920/v1.cjs0OTA3MztqOzE4MjI1OzEyMDA7MTc3ODsxOTIw')
+file = URI.open('https://149351455.v2.pressablecdn.com/wp-content/uploads/2016/09/angelina-jolie-lips-d4a8f.jpg')
 jolie.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 jolie.save
 
 lebron = StarPart.new({
   name_of_star: "LeBron James",
   category: "bust",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "Aaaaaand, duuuuuunk! These arms will give you superpowers… use with caution",
   name_of_part: "arms",
   rating: 4,
   price: 20000
@@ -195,23 +196,88 @@ lebron = StarPart.new({
 
 lebron.user_id = sergio.id
 
-file = URI.open('https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png')
+file = URI.open('https://a.espncdn.com/photo/2019/0201/r496197_1296x729_16-9.jpg')
 lebron.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 lebron.save
 
 scarlett = StarPart.new({
   name_of_star: "Scarlett Johansson",
   category: "bust",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description: "With this bust, we bet you will you want to show off your cleavage all day long… Look me in the eyes!",
   name_of_part: "breasts",
   rating: 5,
   price: 50000
 })
 scarlett.user_id = thibaud.id
 
-file = URI.open('https://s1.r29static.com/bin/entry/cf2/720x864,85/2220755/image.webp')
+file = URI.open('https://www.celebplasticsurgeryonline.com/wp-content/uploads/2015/09/Scarlett-Johansson-before-breast-reduction-02.jpg')
 scarlett.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 scarlett.save
+
+
+kim = StarPart.new({
+  name_of_star: "Kim Kardashian",
+  category: "bottom",
+  description: "Isn't this butt famous for crashing the Internet? You need it!",
+  name_of_part: "butt",
+  rating: 5,
+  price: 30000
+})
+
+kim.user_id = sergio.id
+
+file = URI.open('https://images.complex.com/complex/image/upload/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/lzbumkjdcyd8aw22ok3m.jpg')
+kim.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+kim.save
+
+jenniferlopez = StarPart.new({
+  name_of_star: "Jennifer Lopez",
+  category: "bottom",
+  description: "Curves, curves, curves!",
+  name_of_part: "butt",
+  rating: 3,
+  price: 1500
+})
+
+jenniferlopez.user_id = adelaide.id
+
+file = URI.open('https://www.hypefresh.co/wp-content/uploads/2019/07/Jennifer-Lopez-Ass-Ate-Worthy-At-50.jpg')
+jenniferlopez.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+jenniferlopez.save
+
+queenb = StarPart.new({
+  name_of_star: "Queen B",
+  category: "bottom",
+  description: "So many hours of practice in just one click 👇 Book now",
+  name_of_part: "butt",
+  rating: 3,
+  price: 90000
+})
+
+queenb.user_id = sergio.id
+
+file = URI.open('https://pbs.twimg.com/media/CoTArKIWcAAV4i0.jpg')
+queenb.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+queenb.save
+
+cardib = StarPart.new({
+  name_of_star: "Cardi B",
+  category: "bottom",
+  description: "Caution: this butt might bust out!",
+  name_of_part: "butt",
+  rating: 3,
+  price: 90000
+})
+
+cardib.user_id = tanguy.id
+
+file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cardi-b-finesse-1523301612.jpg?crop=1xw:1xh;center,top&resize=480:*')
+cardib.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+cardib.save
+
+
+
+
 
 Booking.create!(
   start_date: Time.new(2020, 1, 1, 22, 35, 0),

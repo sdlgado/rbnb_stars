@@ -1,4 +1,5 @@
-<h1>Here, create a new Part !</h1>
+<div class="container">
+<p style="text-align: center; font-size: 28px;">Here, create a new Part !</p>
 
 <%= simple_form_for @star_part do |f| %>
   <%= f.input :name_of_star %>
@@ -8,8 +9,9 @@
   <%= f.input :description %>
   <%= f.input :category %>
   <%= f.input :photo, as: :file %>
+  <%= f.input :address %>
 
-  <%= f.submit "Let's create it !", class: 'btn btn-primary'%>
+<p style="text-align: center"><%= f.submit "Let's create it !", class: 'btn btn-primary'%></p>
 <% end %>
-
-<p><%=link_to "Back to list", star_parts_path%></p>
+<p style="text-align: center"><%=link_to "Back to list", star_parts_path%></p>
+</div>
