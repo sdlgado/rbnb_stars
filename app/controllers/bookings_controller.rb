@@ -19,4 +19,11 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    authorize @booking
+    redirect_to account_path
+  end
 end
