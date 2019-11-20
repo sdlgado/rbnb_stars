@@ -36,7 +36,7 @@
             <%= link_to "More Info", star_part_path(part), class: "btn btn-primary" %></i>
           </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
-        <%= image_tag "manager.jpg", alt: "alttext", class: "card-trip-user avatar-bordered" %>
+        <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>
         </div>
       </div>
     <% end %>
