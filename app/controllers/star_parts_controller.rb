@@ -8,6 +8,13 @@ class StarPartsController < ApplicationController
 
   def show
     @star_part = StarPart.find(params[:id])
+    @star_part = StarPart.geocoded # returns flats with coordinates
+    @markers = @star_parts.map do |part|
+      {
+        lat: part.latitude,
+        lng: part.longitude
+      }
+    end
   end
 
   def new

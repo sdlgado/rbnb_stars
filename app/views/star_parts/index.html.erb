@@ -35,7 +35,6 @@
       </div>
   </div>
   <% end %>
-
             <h5 class="text-primary"><%= link_to part.name_of_part.capitalize(), star_part_path(part) %></h5>
             <h6>From: <strong><%= part.name_of_star %></strong></h6>
             <%= link_to "Book Now", star_part_path(part), class: "btn btn-primary" %></i>
@@ -50,3 +49,11 @@
 <div class="container mt-2 align-content-center" >
   <%= link_to "Back Home", root_path, class: "btn btn-danger mb-5", id:"button-back-home" %>
 </div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw'] %>"
+></div>
