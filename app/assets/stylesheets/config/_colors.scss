@@ -25,7 +25,7 @@ $rose-hover: rgba(247, 9, 156, 1);
 
 .bg-rose {
   background-color: $rose;
-  padding: 10px 20px;
+  padding: 10px 20px !important;
   text-decoration: none;
   color: white;
   font-weight: bolder;
