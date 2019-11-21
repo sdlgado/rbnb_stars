@@ -1,6 +1,8 @@
 .user-infos {
-  padding: 5em;
   ul {
+    .first-label {
+        padding-top: 4em;
+    }
     li {
       padding: .2em 0;
       background-color: white;
@@ -15,6 +17,20 @@
       }
     }
   }
+}
+
+.add-part {
+  min-height: 323px;
+  a {
+    display: block;
+    height: 323px;
+  }
+}
+
+.add-part-link {
+  display: block;
+  width: 100%;
+  min-height: 323px;
 }
 
 a i {
@@ -51,8 +67,8 @@ ul {
   width: 7em;
   object-fit: cover;
   object-position: center;
-  top: -1.5em;
-  left: 4em;
+  top: -3em;
+  left: 2em;
   border-radius: 50%;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   border: solid 1px rgba(0,0,0,0.4);
@@ -69,7 +85,10 @@ ul {
 }
 
 .edition {
-  font-size: 2em;
+  padding: 0.1em;
+  font-size: 1.5em;
+  text-align: right;
+  display: block;
 }
 
 .bookings h1 {
@@ -92,4 +111,19 @@ ul {
     margin-left: 1em;
   }
 
+}
+
+.booker {
+  background-color: $rose-faded;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.add-a-part {
+  font-size: 32px;
+  color: $rose;
+  text-decoration: none;
+  &:hover {
+    text-decoration:none;
+    color: $rose-hover;
+  }
 }

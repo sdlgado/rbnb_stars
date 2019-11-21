@@ -1,0 +1,40 @@
+<% if @user_pending_bookings.length > 0 %>
+  <div class="row card-container bg-light rounded shadow-sm p-4 mt-0">
+  <h1 class="col-12">Your pending booking requests (<%= @user_pending_bookings.length %>)</h1>
+  <% @user_pending_bookings.each do |booking| %>
+    <div class="col-lg-6 col-12">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="booking rounded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center flex-grow-1">
+          <div class="profile-part-info-left d-flex justify-content-center align-items-center">
+            <%= image_tag booking.star_part.photo, alt: "alttext" %>
+            <div class="profil-part-info-text mt-2">
+              <div class="d-flex justify-content-center align-items-center">
+                <div>
+                  <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
+                  <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
+                  <h3>€ <%= booking.price %></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column justify-content-between align-items-center px-3">
+            <%= link_to "Confirm", booking_confirm_path(booking), class: "bg-rose mb-3 confirm" %>
+            <%= link_to "Decline", booking_decline_path(booking), class: "link-rose" %>
+          </div>
+        </div>
+      </div>
+      <div class="pl-3 w-100 p-2 booker d-flex align-items-center justify-content-start">
+        <div>
+          <%= image_tag User.find(booking.user_id).photo, alt: "alttext", class: "avatar-large" %>
+          <h2><%= User.find(booking.user_id).username %></h2>
+        </div>
+        <h3 class="pl-5"><%= booking.message %></h3>
+      </div>
+    </div>
+  <% end %>
+  </div>
+<% else %>
+  <div class="row card-container bg-light rounded shadow-sm p-4 mt-0">
+    <h1 class="col-12">You have no pending request</h1>
+  </div>
+<% end %>

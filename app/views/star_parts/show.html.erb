@@ -1,33 +1,32 @@
 <div class="container mt-4">
-  <%= link_to "Back to list", star_parts_path, class: "btn btn-primary  mb-2", id:"button-back-home" %>
+  <%= link_to star_parts_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
 
   <div class="row">
     <div class="col rounded bg-light shadow-sm p-5 m-2">
       <%= cl_image_tag(@star_part.photo.key, :width => 500) %>
     </div>
-    <div class="col rounded bg-light shadow-sm py-5 flex-column m-2">
-      <h4 class="text-primary"><%= @star_part.name_of_part.capitalize %></h4>
-      <h5> Artist: <strong><%= @star_part.name_of_star %></strong></h5>
-      <h5> Rating:
-      <% count = 0 %>
-        <% @star_part.rating.times do %>
-          <% if @star_part.rating > count %>
-            <i class="fa fa-star text-danger"></i>
-          <% else %>
-            <i class="fa fa-star text-danger"></i>
-          <% end %>
-          <% count += 1 %>
-        <% end %></h5>
-      <h6> Category: <%= @star_part.category.capitalize %></h6>
+    <div class="col rounded bg-light shadow-sm p-5 m-2">
+      <h4><strong><%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %></strong></h5>
+      <h5>
+      <% @star_part.rating.times do %>
+        <i class="fa fa-star text-rose"></i>
+        <% end %>
+        <% (5 - @star_part.rating).times do %>
+          <i class="far fa-star text-rose"></i>
+        <% end %>
+        </h5>
+      <h6> <strong>Category:</strong> <%= @star_part.category.capitalize %></h6>
 
       <br>
-      <h6> <strong> Description: </strong> <h6>
-      <p> <%= @star_part.description %> </p>
-      <div class="d-flex justify-content-between ">
+      <h5> <strong> Description: </strong> <h5>
+      <p style="font-size: 18px;"> <%= @star_part.description %> </p>
+      <div class="d-flex justify-content-between mt-5">
         <h5> <strong>Price:</strong> €  <%= @star_part.price %> / day</h5>
       </div>
       <br>
-      <button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="bg-rose" data-toggle="modal" data-target="#exampleModal">
         Book Now!
       </button>
       <br>
@@ -58,7 +57,8 @@
             <%= simple_form_for [@star_part, Booking.new] do |f| %>
             <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
             <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-            <%= f.input :price, as: :string, disabled: true, input_html: {value: @star_part.price} %>
+            <%= f.input :message, as: :string, required: false %>
+            <%= f.input :price, as: :integer, required: true, input_html: {value: @star_part.price, readonly: :true} %>
             <%= f.submit "Book", class: "btn btn-success"%>
             <% end %>
 
@@ -68,8 +68,24 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+ </div>
+
+  <div id="reviews">
+    <% if @star_part.reviews.blank? %>
+      No reviews for now.
+    <% else %>
+    <h2><%= pluralize @star_part.reviews.size, "review" %></h2>
+      <ul>
+      <% @star_part.reviews.each do |review| %>
+        <li>
+          <%= review.rating %>
+          <%= review.content %>
+        </li>
+      <% end %>
+     </ul>
+    <% end %>
+  </div>
+  </div>
 
 <div class="container">
   <div
@@ -77,6 +93,8 @@
     style="width: 100%;
     height: 400px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw
+'] %>"
   ></div>
+
 </div>

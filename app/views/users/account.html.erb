@@ -1,10 +1,13 @@
-<div class="row">
+<div class="row card-container">
   <!-- encart photo et infos -->
-  <div class="col-lg-4 ">
+  <div class="col-lg-4 p-0">
     <div class="user">
-      <div class="user-infos flex-column justify-content-center align-items-start mt-5 p-5">
-        <ul class="rounded bg-light shadow-sm py-5">
-          <h3 class="text-justify">Username</h3>
+      <div class="user-infos flex-column justify-content-center align-items-start mt-5">
+        <ul class="rounded bg-light shadow-sm">
+          <%= link_to edit_user_registration_path, class: "text-gray edition" do %>
+            <i class="fas fa-pen-square"></i>
+          <% end %>
+          <h3 class="text-justify first-label">Username</h3>
           <li class="my-3"><%= @user.username %></li>
           <h3 class="text-justify">First Name</h3>
           <li class="my-3"><%= @user.first_name %></li>
@@ -15,9 +18,6 @@
           <h3 class="text-justify">Member since</h3>
           <li class="my-3"><%= @user.created_at %></li>
           <li class="text-right">
-            <%= link_to edit_user_registration_path, class: "text-gray edition" do %>
-              <i class="fas fa-pen-square"></i>
-            <% end %>
           </li>
         </ul>
       </div>
@@ -29,29 +29,40 @@
       </div>
   </div>
   <!-- encart your bookings -->
-  <div class="col-lg-8 mt-5 py-5">
-    <div class="bg-light rounded mr-5 p-5 shadow-sm bookings">
+  <div class="col-lg-8 mt-5">
+    <div class="bg-light rounded px-5 pt-2 pb-4 shadow-sm bookings">
       <!-- upcoming -->
-      <h1>Your upcoming bookings</h1>
-      <% @user.bookings.each do |booking| %>
-        <% if booking.start_date > Time.now %>
-          <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
-            <div class="profile-part-info-left d-flex justify-content-start align-items-center">
-              <%= image_tag booking.star_part.photo, alt: "alttext" %>
-              <div class="profil-part-info-text">
-                <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
-                <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
+      <% if @user.bookings.select { |booking| booking.end_date > Time.now }.length > 0 %>
+        <h1 class="pt-2">Your upcoming bookings</h1>
+        <% @user.bookings.each do |booking| %>
+          <% if booking.end_date > Time.now %>
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center flex-grow-1">
+                <div class="profile-part-info-left d-flex justify-content-start align-items-start">
+                  <%= image_tag booking.star_part.photo, alt: "alttext" %>
+                  <div class="profil-part-info-text mt-2">
+                    <div class="d-flex justify-content-start align-items-start">
+                      <div>
+                        <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
+                        <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
+                        <h3>€ <%= booking.price %></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h2 class="mr-5">Status : <%= booking.confirmed %></h2>
+                </div>
               </div>
+                  <%= link_to star_part_booking_path(booking.star_part.id, booking.id), method: :delete, data: { confirm: 'Are you sure?' } do  %>
+                    <i class="fas fa-trash text-gray mx-5"></i>
+                  <% end %>
             </div>
-            <%= link_to star_part_booking_path(booking.star_part.id, booking.id), method: :delete, data: { confirm: 'Are you sure?' } do  %>
-              <i class="fas fa-trash text-gray mr-3"></i>
-            <% end %>
-
-          </div>
+          <% end %>
         <% end %>
       <% end %>
       <!-- passed -->
-      <h1>Your 3 latest bookings</h1>
+      <h1 class="pt-2">Your 3 latest bookings</h1>
       <% @user.bookings[0..3].each do |booking| %>
         <% if booking.start_date < Time.now %>
           <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
@@ -66,7 +77,7 @@
               </div>
             </div>
 
-            <%= link_to "leave a review", "#", class: "bg-rose mr-3"  %>
+           <%= link_to "leave a review", new_star_part_booking_review_path(booking.star_part, booking), class: "bg-rose mr-3"  %>
 
             <!-- Modal -->
 
@@ -104,42 +115,3 @@
     </div>
   </div>
 </div>
-
-<div class="card-container mt-3" >
-  <div class="d-flex justify-content-end ">
-  </div>
-  <div class="cards">
-    <% @user.star_parts.each do |part| %>
-        <div class="card-trip rounded">
-          <%= cl_image_tag part.photo.key, class: "part-img" %>
-          <div class="card-trip-infos">
-            <div class="text-justify">
-              <small>
-                <% part.rating.times do %>
-                    <i class="fa fa-star text-rose"></i>
-                <% end %>
-                <% (5 - part.rating).times do %>
-                    <i class="far fa-star text-rose"></i>
-                <% end %>
-              </small>
-              <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
-            </div>
-          <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
-          <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>
-          </div>
-          <div class="d-flex justify-content-between py-1 px-3">
-            <%= link_to edit_star_part_path(part), class: "text-gray" do %>
-              <i class="fas fa-pen-square"></i>
-            <% end %>
-            <%= link_to star_part_path(part), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-gray ml-2" do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
-
-          </div>
-        </div>
-      <% end %>
-  </div>
-</div>
-
-
-

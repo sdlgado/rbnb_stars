@@ -5,10 +5,11 @@ import $ from 'jquery';
 import { navbarTransparent } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/text_typed';
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
-
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { initUpdateNavbarOnScroll } from '../components/scroll-navbar';
 toggleDateInputs();
+loadDynamicBannerText();
 navbarTransparent();
+initUpdateNavbarOnScroll();
 initMapbox();
 loadDynamicBannerText();

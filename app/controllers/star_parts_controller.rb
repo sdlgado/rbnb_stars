@@ -31,7 +31,6 @@ class StarPartsController < ApplicationController
         lat: @star_part.latitude,
         lng: @star_part.longitude
       }]
-
   end
 
   def new
@@ -62,7 +61,8 @@ class StarPartsController < ApplicationController
   def destroy
     @star_part = StarPart.find(params[:id])
     @star_part.destroy
-    redirect_to star_parts_path
+    redirect_to parts_path
+    flash.now[:notice] = "NOTICE FLASH"
   end
 
   private

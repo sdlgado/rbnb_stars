@@ -1,0 +1,15 @@
+<div class="container">
+<%= link_to account_path do %>
+  <i class="fas fa-arrow-left"></i>
+<% end %>
+</div>
+<div class="container box-form">
+<p style="text-align: center; font-size: 28px;">Leave a review</p>
+
+<%= simple_form_for ([@booking.star_part, @booking, @review]) do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content, :label => "What did you think about this body part?" %>
+
+<p style="text-align: center"><%= f.submit "Submit", class: 'bg-rose mr-3'%></p>
+<% end %>
+</div>

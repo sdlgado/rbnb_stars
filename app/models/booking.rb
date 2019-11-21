@@ -1,10 +1,19 @@
 class Booking < ApplicationRecord
+  has_many :reviews, dependent: :destroy
   belongs_to :user
   belongs_to :star_part
   validates :start_date, presence: true
   validates :end_date, presence: true
   validate :end_date_after_start_date
-  validate :do_not_contain_unavailable_dates
+  validate :do_not_contain_unavailable_dates, on: :create
+
+  def confirm
+    self.confirmed = "Accepted"
+  end
+
+  def refuse
+    self.confirmed = "Declined"
+  end
 
   private
 
