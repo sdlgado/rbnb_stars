@@ -26,7 +26,7 @@
     font-size: 12px;
   }
 
-.bg-rose {
+.bg-rose-search{
   border-radius: 2px;
   margin-left: 2px;
   width: 100px;
@@ -34,5 +34,10 @@
   font-size: 13px;
   padding-top: 7px;
   // text-align: center;
+  background-color: rgba(247, 9, 156, 0.8);
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
 
 }

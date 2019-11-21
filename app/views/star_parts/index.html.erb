@@ -5,7 +5,7 @@
       <%= form_tag star_parts_path, method: :get, class: "form-inline" do %>
       <%#= select_tag :category, options_for_select(@star_parts_all.collect{ |s| s.category }.uniq) %>
       <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "" %>
-      <%= submit_tag "Search", class: "bg-rose mr-3" %>
+      <%= submit_tag "Search", class: "bg-rose-search" %>
       <% end %>
     </div>
     <p> <span id="typed-js"></span> </p>
