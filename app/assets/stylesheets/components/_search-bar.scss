@@ -10,7 +10,6 @@
 }
 
 .search-form-control .form-control {
-  height: 3rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   width: 300px;
@@ -23,6 +22,41 @@
 }
 
 .search-form-control .btn {
-    background-color: #177FFB;
     color: white;
+    font-size: 12px;
   }
+
+.bg-rose-search{
+  border-radius: 2px;
+  margin-left: 2px;
+  width: 100px;
+  height: 38px;
+  font-size: 13px;
+  padding-top: 7px;
+  text-align: center;
+  background-color: rgba(247, 9, 156, 0.8);
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+}
+
+.bg-rose-search:hover{
+    text-decoration: none;
+    color: white;
+    opacity: 0.9;
+}
+
+.form-inline {
+    margin-top: 64px;
+}
+
+#typed-js {
+position: absolute;
+z-index: 3;
+}
+
+.typed-cursor {
+  display: none;
+}
+

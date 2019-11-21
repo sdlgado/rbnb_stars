@@ -12,3 +12,4 @@ loadDynamicBannerText();
 navbarTransparent();
 initUpdateNavbarOnScroll();
 initMapbox();
+loadDynamicBannerText();
