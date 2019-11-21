@@ -1,8 +1,8 @@
 import Typed from 'typed.js';
 
 const loadDynamicBannerText = () => {
-  new Typed('#yped-js', {
-    strings: ["Head - Gad Elmaleh's Eyes", "Nicki Minaj's Butt", "Jason Statham's Abs"],
+  new Typed('#typed-js', {
+    strings: ["Head - Gad Elmaleh's Eyes", "Bottom - Nicki Minaj's Butt", "Bust - Jason Statham's Abs"],
     typeSpeed: 50,
     loop: true
   });
