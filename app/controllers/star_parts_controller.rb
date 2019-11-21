@@ -31,7 +31,6 @@ class StarPartsController < ApplicationController
         lat: @star_part.latitude,
         lng: @star_part.longitude
       }]
-
   end
 
   def new

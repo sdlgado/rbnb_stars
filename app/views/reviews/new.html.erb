@@ -1,0 +1,13 @@
+<div class="container">
+<p style="text-align: center; font-size: 28px;">Leave a review</p>
+
+<%= simple_form_for ([@booking.star_part, @booking, @review]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+
+
+<p style="text-align: center"><%= f.submit "Submit", class: 'bg-rose mr-3'%></p>
+<% end %>
+<p style="text-align: center"><%=link_to "Back", account_path%></p>
+</div>
