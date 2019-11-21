@@ -9,6 +9,7 @@ $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: rgba(0, 0, 0, 0.7);
 $rose: rgba(247, 9, 156, 0.8);
+$rose-faded: rgba(247, 9, 156, 0.1);
 $rose-hover: rgba(247, 9, 156, 1);
 
 
@@ -29,6 +30,7 @@ $rose-hover: rgba(247, 9, 156, 1);
   text-decoration: none;
   color: white;
   font-weight: bolder;
+  display: block;
   &:hover {
     background-color: $rose-hover;
     text-decoration: none;
@@ -47,4 +49,8 @@ $rose-hover: rgba(247, 9, 156, 1);
     color: $rose-hover;
     text-decoration: underline;
   }
+}
+
+.border-right-rose {
+  border-right: solid 1px $rose;
 }

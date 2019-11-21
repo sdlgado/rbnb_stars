@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(version: 2019_11_21_093915) do
     t.datetime "updated_at", null: false
     t.date "start_date"
     t.date "end_date"
+    t.string "confirmed"
+    t.text "message"
+    t.integer "price"
     t.index ["star_part_id"], name: "index_bookings_on_star_part_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
