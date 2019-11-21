@@ -17,7 +17,7 @@ class StarPart < ApplicationRecord
 
   include PgSearch # search_bar
   pg_search_scope :search,
-    against: [ :name_of_star, :name_of_part, :category ],
+    against: [ :name_of_star, :name_of_part, :category, :address ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
