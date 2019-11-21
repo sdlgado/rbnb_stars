@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
       @booking = Booking.new
       render :new
     end
+    @review = Review.new
   end
 
   def destroy
