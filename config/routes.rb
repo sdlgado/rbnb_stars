@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get "/account", to: "users#account"
+  get "/booking/:id/confirm" , to: "bookings#confirm", as: "booking_confirm"
+  get "/booking/:id/decline" , to: "bookings#decline", as: "booking_decline"
   resources :star_parts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     # resources :star_parts, only:[:destroy], as: :star_parts
   # end
