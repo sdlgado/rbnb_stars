@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <%= link_to star_parts_path do %>
-    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-left pl-0"></i>
   <% end %>
 
   <div class="row">
@@ -31,6 +31,14 @@
       </button>
       <br>
       <br>
+      <div
+    id="map"
+    style="width: 100%;
+    height: 200px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw
+'] %>"
+  ></div>
   <% if policy(@star_part).edit? && policy(@star_part).destroy? %>
 
   <% if policy(@star_part).edit? %>
@@ -70,31 +78,27 @@
   </div>
  </div>
 
-  <div id="reviews">
+<div id="reviews">
     <% if @star_part.reviews.blank? %>
       No reviews for now.
     <% else %>
-    <h2><%= pluralize @star_part.reviews.size, "review" %></h2>
+    <h2><%= pluralize @star_part.reviews.size, "reviews" %></h2>
       <ul>
       <% @star_part.reviews.each do |review| %>
         <li>
-          <%= review.rating %>
-          <%= review.content %>
+        <li>
+          <% @star_part.rating.times do %>
+                  <i class="fa fa-star text-rose"></i>
+              <% end %>
+              <% (5 - @star_part.rating).times do %>
+                  <i class="far fa-star text-rose"></i>
+              <% end %>
+        </li>
+         <li> <%= review.content %>
         </li>
       <% end %>
      </ul>
     <% end %>
   </div>
-  </div>
-
-<div class="container">
-  <div
-    id="map"
-    style="width: 100%;
-    height: 400px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw
-'] %>"
-  ></div>
-
 </div>
+
