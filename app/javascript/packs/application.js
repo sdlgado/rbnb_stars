@@ -4,7 +4,6 @@ import {toggleDateInputs} from "../plugins/flatpickr"
 import $ from 'jquery';
 import { navbarTransparent } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/text_typed';
-loadDynamicBannerText();
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
 import { initMapbox } from '../plugins/init_mapbox';
@@ -12,3 +11,4 @@ import { initMapbox } from '../plugins/init_mapbox';
 toggleDateInputs();
 navbarTransparent();
 initMapbox();
+loadDynamicBannerText();
