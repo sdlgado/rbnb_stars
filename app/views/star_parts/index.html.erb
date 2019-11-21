@@ -1,14 +1,14 @@
 <div class="card-container mt-3" >
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1569198029748-cd12fd4ae3c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=783&q=80)">
     <p>Get the body of your dreams</p>
-    <p> <span id="typed-js"></span> </p>
     <div>
       <%= form_tag star_parts_path, method: :get, class: "form-inline" do %>
       <%#= select_tag :category, options_for_select(@star_parts_all.collect{ |s| s.category }.uniq) %>
       <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "" %>
-      <%= submit_tag "Search", class: "btn btn-primary ml-2" %>
+      <%= submit_tag "Search", class: "bg-rose mr-3" %>
       <% end %>
     </div>
+    <p> <span id="typed-js"></span> </p>
   </div>
 </div>
 <div class="card-container mt-3" >

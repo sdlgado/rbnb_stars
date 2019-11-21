@@ -10,7 +10,6 @@
 }
 
 .search-form-control .form-control {
-  height: 3rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   width: 300px;
@@ -23,6 +22,17 @@
 }
 
 .search-form-control .btn {
-    background-color: #177FFB;
     color: white;
+    font-size: 12px;
   }
+
+.bg-rose {
+  border-radius: 2px;
+  margin-left: 2px;
+  width: 100px;
+  height: 37px;
+  font-size: 13px;
+  padding-top: 7px;
+  // text-align: center;
+
+}
