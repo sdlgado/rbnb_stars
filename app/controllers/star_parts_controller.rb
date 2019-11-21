@@ -61,7 +61,8 @@ class StarPartsController < ApplicationController
   def destroy
     @star_part = StarPart.find(params[:id])
     @star_part.destroy
-    redirect_to star_parts_path
+    redirect_to parts_path
+    flash.now[:notice] = "NOTICE FLASH"
   end
 
   private
