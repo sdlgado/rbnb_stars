@@ -1,17 +1,20 @@
 <div class="container">
+<%= link_to account_path do %>
+  <i class="fas fa-arrow-left"></i>
+<% end %>
+</div>
+<div class="container box-form">
 <p style="text-align: center; font-size: 28px;">Rent a body part</p>
 
 <%= simple_form_for @star_part do |f| %>
-  <%= f.input :name_of_star %>
-  <%= f.input :name_of_part %>
-  <%= f.input :rating %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :name_of_star, :label => "Who is the star?" %>
+  <%= f.input :name_of_part, :label => "What part do you want to rent?"%>
+  <%= f.input :category, :collection => ["bottom", "head", "bust"] %>
+  <%= f.input :price, :label => "Price per night (in €)" %>
+  <%= f.input :description, :label => "Please describe the body part"%>
   <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
 
 <p style="text-align: center"><%= f.submit "Submit", class: 'bg-rose mr-3'%></p>
 <% end %>
-<p style="text-align: center"><%=link_to "Back", star_parts_path%></p>
 </div>
