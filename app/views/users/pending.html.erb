@@ -1,6 +1,6 @@
 <% if @user_pending_bookings.length > 0 %>
   <div class="row card-container bg-light rounded shadow-sm p-4 mt-0">
-  <h1 class="col-12">Your pending booking requests (<%= @user_pending_bookings.length %>)</h1>
+  <h1 class="col-12">Booking requests to confirm (<%= @user_pending_bookings.length %>)</h1>
   <% @user_pending_bookings.each do |booking| %>
     <div class="col-lg-6 col-12">
       <div class="d-flex justify-content-center align-items-center">

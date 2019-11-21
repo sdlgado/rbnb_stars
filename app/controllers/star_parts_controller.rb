@@ -43,10 +43,13 @@ class StarPartsController < ApplicationController
   end
 
   def create
-    @star_part = StarPart.new(star_part_params.merge(user: current_user)) # pour le user_id
+    @star_part = StarPart.new(star_part_params.merge(user_id: current_user.id).merge(rating: 0)) # pour le user_id
     authorize @star_part
-    @star_part.save!
-    redirect_to star_parts_path
+    if @star_part.save!
+      redirect_to star_parts_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -73,6 +76,6 @@ class StarPartsController < ApplicationController
   end
 
   def star_part_params
-    params.require(:star_part).permit(:description, :rating, :name_of_part, :name_of_star, :price, :category, :user_id, :photo)
+    params.require(:star_part).permit(:description, :name_of_part, :name_of_star, :price, :category, :user_id, :photo)
   end
 end

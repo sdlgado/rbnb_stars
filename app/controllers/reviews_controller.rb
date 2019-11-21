@@ -6,14 +6,21 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    par = {user_id: current_user.id, content: params[:review][:content], rating: params[:review][:rating]}
+    @review = Review.new(par)
     # we need `booking_id` to associate review with corresponding booking
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     if @review.save
       redirect_to star_part_path(@booking.star_part)
+      array_reviews = []
+      @booking.star_part.reviews.each do |review|
+        array_reviews << review.rating
+      end
+      @booking.star_part.rating = array_reviews.length == 0 ? 0 : (array_reviews.sum / array_reviews.length).ceil
+      @booking.star_part.save
     else
-      render "bookings/show"
+      render :new
     end
     authorize @review
   end
@@ -27,6 +34,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :title, :rating)
+    params.require(:review).permit(:content, :rating)
   end
 end

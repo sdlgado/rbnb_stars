@@ -39,7 +39,9 @@
             <div class="d-flex justify-content-center align-items-center">
               <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center flex-grow-1">
                 <div class="profile-part-info-left d-flex justify-content-start align-items-start">
-                  <%= image_tag booking.star_part.photo, alt: "alttext" %>
+                  <%= link_to star_part_path(booking.star_part) do %>
+                    <%= image_tag booking.star_part.photo, alt: "alttext" %>
+                  <% end %>
                   <div class="profil-part-info-text mt-2">
                     <div class="d-flex justify-content-start align-items-start">
                       <div>
@@ -51,7 +53,14 @@
                   </div>
                 </div>
                 <div>
-                  <h2 class="mr-5">Status : <%= booking.confirmed %></h2>
+                  <% if booking.confirmed == "Declined" %>
+                    <h2 class="mr-5 declined">Status: <%= booking.confirmed %></h2>
+                  <% elsif booking.confirmed == "Accepted" %>
+                    <h2 class="mr-5 confirmed">Status: <%= booking.confirmed %></h2>
+                  <% else %>
+                    <h2 class="mr-5 pending">Status: <%= booking.confirmed.capitalize %></h2>
+                  <% end %>
+
                 </div>
               </div>
                   <%= link_to star_part_booking_path(booking.star_part.id, booking.id), method: :delete, data: { confirm: 'Are you sure?' } do  %>
@@ -62,23 +71,27 @@
         <% end %>
       <% end %>
       <!-- passed -->
-      <h1 class="pt-2">Your 3 latest bookings</h1>
+      <h1 class="pt-2">Your latest bookings</h1>
       <% @user.bookings[0..3].each do |booking| %>
-        <% if booking.start_date < Time.now %>
+        <% if booking.end_date < Time.now %>
           <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
             <div class="profile-part-info-left d-flex justify-content-start align-items-center">
-              <%= image_tag booking.star_part.photo, alt: "alttext" %>
+              <%= link_to star_part_path(booking.star_part) do %>
+                <%= image_tag booking.star_part.photo, alt: "alttext" %>
+              <% end %>
               <div class="profil-part-info-text">
                 <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
-                <button type="button" class="link-rose" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="link-rose book-again" data-toggle="modal" data-target="#exampleModal" id=<%= booking.star_part.id %>>
                 Book Again
               </button>
               </div>
             </div>
-
-           <%= link_to "leave a review", new_star_part_booking_review_path(booking.star_part, booking), class: "bg-rose mr-3"  %>
-
+            <% if booking.star_part.reviews.select { |review| review.user_id == current_user.id }.count > 0 %>
+              <div class="review-done mr-3"><i class="fas fa-check mr-2"></i>You already left a review!</div>
+            <% else %>
+              <%= link_to "leave a review", new_star_part_booking_review_path(booking.star_part, booking), class: "bg-rose mr-3" %>
+            <% end %>
             <!-- Modal -->
 
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,13 +106,13 @@
                   <div class="modal-body">
                         <%= simple_form_for [booking.star_part, Booking.new] do |f| %>
                         <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-                        <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+                        <%= f.input :message, as: :text %>
                         <%= f.input :price, as: :string, disabled: true, input_html: {value: booking.star_part.price} %>
-                        <%= f.submit "Book", class: "btn btn-success"%>
+                        <%= f.submit "Book", class: "bg-rose"%>
                         <% end %>
 
                         <% booking.star_part.unavailable_dates.each do |date|%>
-                          <div class="unavailable-dates" data-unavailable=<%= date %>></div>
+                          <div class=star<%= booking.star_part.id %> data-unavailable=<%= date %> ></div>
                         <% end %>
 
                   </div>
@@ -114,4 +127,7 @@
       <% end %>
     </div>
   </div>
+</div>
+<div class="container mt-2 align-content-center" >
+  <%= link_to "Continue my relooking !", star_parts_path, class: "link-rose", id:"button-back-home" %>
 </div>
