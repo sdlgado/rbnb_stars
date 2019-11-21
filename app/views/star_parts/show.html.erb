@@ -1,33 +1,32 @@
 <div class="container mt-4">
-  <%= link_to "Back to list", star_parts_path, class: "btn btn-primary  mb-2", id:"button-back-home" %>
+  <%= link_to star_parts_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
 
   <div class="row">
     <div class="col rounded bg-light shadow-sm p-5 m-2">
       <%= cl_image_tag(@star_part.photo.key, :width => 500) %>
     </div>
     <div class="col rounded bg-light shadow-sm py-5 flex-column m-2">
-      <h4 class="text-primary"><%= @star_part.name_of_part.capitalize %></h4>
-      <h5> Artist: <strong><%= @star_part.name_of_star %></strong></h5>
+      <h4><strong><%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %></strong></h5>
       <h5> Rating:
-      <% count = 0 %>
-        <% @star_part.rating.times do %>
-          <% if @star_part.rating > count %>
-            <i class="fa fa-star text-danger"></i>
-          <% else %>
-            <i class="fa fa-star text-danger"></i>
-          <% end %>
-          <% count += 1 %>
-        <% end %></h5>
-      <h6> Category: <%= @star_part.category.capitalize %></h6>
+      <% @star_part.rating.times do %>
+        <i class="fa fa-star text-rose"></i>
+        <% end %>
+        <% (5 - @star_part.rating).times do %>
+          <i class="far fa-star text-rose"></i>
+        <% end %>
+        </h5>
+      <h5> Category: <%= @star_part.category.capitalize %></h5>
 
       <br>
-      <h6> <strong> Description: </strong> <h6>
+      <h5> <strong> Description: </strong> <h5>
       <p> <%= @star_part.description %> </p>
-      <div class="d-flex justify-content-between ">
+      <div class="d-flex justify-content-between mt-5">
         <h5> <strong>Price:</strong> €  <%= @star_part.price %> / day</h5>
       </div>
       <br>
-      <button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="bg-rose" data-toggle="modal" data-target="#exampleModal">
         Book Now!
       </button>
       <br>
