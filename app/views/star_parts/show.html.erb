@@ -64,8 +64,7 @@
       <div class="modal-body">
             <%= simple_form_for [@star_part, Booking.new] do |f| %>
             <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-            <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-            <%= f.input :message, as: :string, required: false %>
+            <%= f.input :message, as: :text, required: false %>
             <%= f.input :price, as: :integer, required: true, input_html: {value: @star_part.price, readonly: :true} %>
             <%= f.submit "Book", class: "btn btn-success"%>
             <% end %>
