@@ -24,14 +24,21 @@ $rose-hover: rgba(247, 9, 156, 1);
   }
 }
 
+.text-rose {
+  color: $rose;
+  &:hover {
+    color: $rose-hover;
+  }
+}
+
 .bg-rose {
-  background-color: $rose;
+  background-color: $rose !important;
   padding: 10px 20px !important;
   text-decoration: none;
-  color: white;
-  font-weight: bolder;
+  color: white !important;
+  font-weight: lighter !important;
   display: block;
-  border: 0px;
+  border-radius: 2px !important;
   &:hover {
     background-color: $rose-hover;
     text-decoration: none;
