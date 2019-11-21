@@ -15,6 +15,14 @@ class StarPart < ApplicationRecord
   #   return if photo.key.nil?
   #   errors.add(:main_picture, 'needs to be an image')
   # end
+
+  include PgSearch # search_bar
+  pg_search_scope :search,
+    against: [ :name_of_star, :name_of_part, :category, :address ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   def active_star_part
     if photo.attached? == false
       errors.add(:photo, "is not active")
