@@ -1,4 +1,7 @@
 <div class="container">
+<%= link_to account_path do %>
+  <i class="fas fa-arrow-left" color="rose"></i>
+<% end %>
 <p style="text-align: center; font-size: 28px;">Leave a review</p>
 
 <%= simple_form_for ([@booking.star_part, @booking, @review]) do |f| %>
@@ -9,5 +12,4 @@
 
 <p style="text-align: center"><%= f.submit "Submit", class: 'bg-rose mr-3'%></p>
 <% end %>
-<p style="text-align: center"><%=link_to "Back", account_path%></p>
 </div>
