@@ -7,9 +7,9 @@
     <div class="col rounded bg-light shadow-sm p-5 m-2">
       <%= cl_image_tag(@star_part.photo.key, :width => 500) %>
     </div>
-    <div class="col rounded bg-light shadow-sm py-5 flex-column m-2">
+    <div class="col rounded bg-light shadow-sm p-5 m-2">
       <h4><strong><%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %></strong></h5>
-      <h5> Rating:
+      <h5>
       <% @star_part.rating.times do %>
         <i class="fa fa-star text-rose"></i>
         <% end %>
@@ -17,11 +17,11 @@
           <i class="far fa-star text-rose"></i>
         <% end %>
         </h5>
-      <h5> Category: <%= @star_part.category.capitalize %></h5>
+      <h6> <strong>Category:</strong> <%= @star_part.category.capitalize %></h6>
 
       <br>
       <h5> <strong> Description: </strong> <h5>
-      <p> <%= @star_part.description %> </p>
+      <p style="font-size: 18px;"> <%= @star_part.description %> </p>
       <div class="d-flex justify-content-between mt-5">
         <h5> <strong>Price:</strong> €  <%= @star_part.price %> / day</h5>
       </div>
@@ -68,8 +68,24 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+ </div>
+
+  <div id="reviews">
+    <% if @star_part.reviews.blank? %>
+      No reviews for now.
+    <% else %>
+    <h2><%= pluralize @star_part.reviews.size, "review" %></h2>
+      <ul>
+      <% @star_part.reviews.each do |review| %>
+        <li>
+          <%= review.rating %>
+          <%= review.content %>
+        </li>
+      <% end %>
+     </ul>
+    <% end %>
+  </div>
+  </div>
 
 <div class="container">
   <div
@@ -77,9 +93,8 @@
     style="width: 100%;
     height: 400px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw
+'] %>"
   ></div>
-
-<!-- render "reviews/form", booking: @booking, review: @review %> -->
 
 </div>
