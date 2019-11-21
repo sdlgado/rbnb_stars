@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  has_many :reviews, dependent: :destroy
   belongs_to :user
   belongs_to :star_part
   validates :start_date, presence: true
