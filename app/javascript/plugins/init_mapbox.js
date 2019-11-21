@@ -6,7 +6,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/tanguy75/ck38zxevq07h11co3e37kss8v'
   });
 };
 
@@ -32,5 +32,10 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   }
 };
+
+// const map = new mapboxgl.Map({
+//   container: 'map',
+//   style: 'mapbox://styles/tanguy75/ck38zxevq07h11co3e37kss8v' // <-- use your own!
+// });
 
 export { initMapbox };
