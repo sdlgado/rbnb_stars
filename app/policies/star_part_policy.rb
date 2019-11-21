@@ -16,7 +16,7 @@ class StarPartPolicy < ApplicationPolicy
   end
 
   def create?
-    user_signed_in?
+    user
   end
 
   def update?
