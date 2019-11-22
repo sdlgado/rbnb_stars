@@ -727,43 +727,43 @@ puts "Seeds helene done"
 
 puts "seeds booking tanguy starts"
 Booking.create!(
-  start_date: Time.new(2020, 9, 26),
-  end_date: Time.new(2020, 10, 2),
+  start_date: Time.new(2019, 9, 26),
+  end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: jason.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 26),
-  end_date: Time.new(2020, 10, 2),
+  start_date: Time.new(2019, 9, 26),
+  end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: nicole.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 26),
-  end_date: Time.new(2020, 10, 2),
+  start_date: Time.new(2019, 9, 26),
+  end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: cristiano.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 26),
-  end_date: Time.new(2020, 10, 2),
+  start_date: Time.new(2019, 9, 26),
+  end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: megan.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 26),
-  end_date: Time.new(2020, 10, 2),
+  start_date: Time.new(2019, 9, 26),
+  end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: natalie.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 26),
-  end_date: Time.new(2020, 10, 2),
+  start_date: Time.new(2019, 9, 26),
+  end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: adriana.id,
   confirmed: "Accepted"
@@ -771,43 +771,43 @@ Booking.create!(
 puts "seeds booking tanguy done!"
 puts "seeds booking ade starts"
 Booking.create!(
-  start_date: Time.new(2020, 9, 28),
-  end_date: Time.new(2020, 9, 30),
+  start_date: Time.new(2019, 9, 28),
+  end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: cardi.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 28),
-  end_date: Time.new(2020, 9, 30),
+  start_date: Time.new(2019, 9, 28),
+  end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: beyonce.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 28),
-  end_date: Time.new(2020, 9, 30),
+  start_date: Time.new(2019, 9, 28),
+  end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: selena.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 28),
-  end_date: Time.new(2020, 9, 30),
+  start_date: Time.new(2019, 9, 28),
+  end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: lionel.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 28),
-  end_date: Time.new(2020, 9, 30),
+  start_date: Time.new(2019, 9, 28),
+  end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: charlize.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 28),
-  end_date: Time.new(2020, 9, 30),
+  start_date: Time.new(2019, 9, 28),
+  end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: angelina.id,
   confirmed: "Accepted"
@@ -815,43 +815,43 @@ Booking.create!(
 puts "seeds booking ade done!"
 puts "seeds booking thibaud starts"
 Booking.create!(
-  start_date: Time.new(2020, 10, 03),
-  end_date: Time.new(2020, 10, 5),
+  start_date: Time.new(2019, 10, 03),
+  end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: kim.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 10, 03),
-  end_date: Time.new(2020, 10, 5),
+  start_date: Time.new(2019, 10, 03),
+  end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: al.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 10, 03),
-  end_date: Time.new(2020, 10, 5),
+  start_date: Time.new(2019, 10, 03),
+  end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: serena.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 10, 03),
-  end_date: Time.new(2020, 10, 5),
+  start_date: Time.new(2019, 10, 03),
+  end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: taylor.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 10, 03),
-  end_date: Time.new(2020, 10, 5),
+  start_date: Time.new(2019, 10, 03),
+  end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: dwayne.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 10, 03),
-  end_date: Time.new(2020, 10, 5),
+  start_date: Time.new(2019, 10, 03),
+  end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: maria.id,
   confirmed: "Accepted"
@@ -859,43 +859,43 @@ Booking.create!(
 puts "seeds booking thibaud done!"
 puts "seeds booking sergio starts"
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: scarlett.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: robert.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: omar.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: vincent.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: justin.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: romain.id,
   confirmed: "Accepted"
@@ -903,43 +903,43 @@ Booking.create!(
 puts "seeds booking sergio done!"
 puts "seeds booking barbara starts"
 Booking.create!(
-  start_date: Time.new(2020, 9, 29),
-  end_date: Time.new(2020, 10, 1),
+  start_date: Time.new(2019, 9, 29),
+  end_date: Time.new(2019, 10, 1),
   user_id: barbara.id,
   star_part_id: lebron.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 29),
-  end_date: Time.new(2020, 10, 1),
+  start_date: Time.new(2019, 9, 29),
+  end_date: Time.new(2019, 10, 1),
   user_id: barbara.id,
   star_part_id: johnny.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 29),
-  end_date: Time.new(2020, 10, 1),
+  start_date: Time.new(2019, 9, 29),
+  end_date: Time.new(2019, 10, 1),
   user_id: barbara.id,
   star_part_id: lady.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 29),
-  end_date: Time.new(2020, 10, 1),
+  start_date: Time.new(2019, 9, 29),
+  end_date: Time.new(2019, 10, 1),
   user_id: barbara.id,
   star_part_id: drake.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 29),
-  end_date: Time.new(2020, 10, 1),
+  start_date: Time.new(2019, 9, 29),
+  end_date: Time.new(2019, 10, 1),
   user_id: barbara.id,
   star_part_id: francois.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 29),
-  end_date: Time.new(2020, 10, 1),
+  start_date: Time.new(2019, 9, 29),
+  end_date: Time.new(2019, 10, 1),
   user_id: barbara.id,
   star_part_id: jean.id,
   confirmed: "Accepted"
@@ -947,43 +947,43 @@ Booking.create!(
 puts "seeds booking barbara done!"
 puts "seeds booking helene starts"
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: gad.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10,3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10,3),
   user_id: helene.id,
   star_part_id: bradley.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: kendall.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: dany.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: marion.id,
   confirmed: "Accepted"
 )
 Booking.create!(
-  start_date: Time.new(2020, 9, 30),
-  end_date: Time.new(2020, 10, 3),
+  start_date: Time.new(2019, 9, 30),
+  end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: tom.id,
   confirmed: "Accepted"
