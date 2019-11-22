@@ -77,7 +77,7 @@
 
     <div class="col-8">
       <% if @star_part.reviews.blank? %>
-        <p style="font-size: 16px;">No reviews for now. Be the first to leave a review by booking <%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %>!</p>
+        <p style="font-size: 16px;">No reviews for now for <%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %>!</p>
       <% else %>
         <p style="font-size: 18px;"><%= pluralize @star_part.reviews.size, "Review" %> : </p>
         <% @star_part.reviews.each do |review| %>
