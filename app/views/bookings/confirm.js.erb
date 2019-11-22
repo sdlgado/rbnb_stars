@@ -1,0 +1,6 @@
+function confirmBookings() {
+  const bookingDestroyed = document.querySelector("[data-booking-id='<%=@booking.id%>']");
+  bookingDestroyed.remove();
+}
+
+confirmBookings();

@@ -10,7 +10,10 @@ class BookingsController < ApplicationController
     @booking.confirm
     @booking.save
     authorize @booking
-    redirect_to account_path
+    respond_to do |format|
+      format.html { redirect_to pending_path }
+      format.js
+    end
   end
 
   def refuse
@@ -18,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.decline
     @booking.save
     authorize @booking
-    redirect_to account_path
+    redirect_to pending_path
   end
 
   def create

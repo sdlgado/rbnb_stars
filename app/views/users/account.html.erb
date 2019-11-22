@@ -107,7 +107,7 @@
                         <%= simple_form_for [booking.star_part, Booking.new] do |f| %>
                         <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
                         <%= f.input :message, as: :text %>
-                        <%= f.input :price, as: :string, disabled: true, input_html: {value: booking.star_part.price} %>
+                        <%= f.input :price, as: :string, readonly: true, input_html: {value: booking.star_part.price} %>
                         <%= f.submit "Book", class: "bg-rose"%>
                         <% end %>
 

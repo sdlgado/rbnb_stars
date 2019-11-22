@@ -8,7 +8,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 import { initUpdateNavbarOnScroll } from '../components/scroll-navbar';
 import { rate } from '../components/rating';
-import { initAutocomplete } from '../plugins/init_autocomplete.js'
+import { rateIndicator } from '../components/rating';
+import { initAutocomplete } from '../plugins/init_autocomplete.js';
 toggleDateInputs();
 loadDynamicBannerText();
 navbarTransparent();
@@ -16,4 +17,5 @@ initUpdateNavbarOnScroll();
 initMapbox();
 loadDynamicBannerText();
 rate();
+rateIndicator();
 initAutocomplete();
