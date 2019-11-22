@@ -9,17 +9,19 @@
 <div class="row-stars">
   <fieldset class="rate">
     <input id="star5" class="etoile-input" data-count="5" type="radio" name="rate2"/>
-    <label for="star5" class="etoile" title="Awesome"></label>
+    <label for="star5" class="etoile" title="Awesome" id="label-five"></label>
     <input id="star4" class="etoile-input" data-count="4" type="radio" name="rate2" />
-    <label for="star4" class="etoile" title="Very good"></label>
+    <label for="star4" class="etoile" title="Very good" id="label-four"></label>
     <input id="star3" class="etoile-input" data-count="3" type="radio" name="rate2" />
-    <label for="star3" class="etoile" title="Satisfactory"></label>
+    <label for="star3" class="etoile" title="Satisfactory" id="label-three"></label>
     <input id="star2" class="etoile-input" data-count="2" type="radio" name="rate2" />
-    <label for="star2" class="etoile" title="Bad"></label>
+    <label for="star2" class="etoile" title="Bad" id="label-two"></label>
     <input id="star1" class="etoile-input" data-count="1" type="radio" name="rate2" />
-    <label for="star1" class="etoile" title="Awful"></label>
+    <label for="star1" class="etoile" title="Awful" id="label-one"></label>
   </fieldset>
 </div>
+
+<div id="indicateur">How was it?</div>
 
 <%= simple_form_for ([@booking.star_part, @booking, @review]) do |f| %>
   <%= f.input :rating, as: :hidden, input_html: { readonly: true, value: 0 } %>
