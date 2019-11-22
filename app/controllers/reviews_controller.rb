@@ -12,11 +12,11 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     if @review.save
-      redirect_to star_part_path(@booking.star_part)
       array_reviews = []
       @booking.star_part.reviews.each do |review|
         array_reviews << review.rating
       end
+      redirect_to star_part_path(@booking.star_part)
       @booking.star_part.rating = array_reviews.length == 0 ? 0 : (array_reviews.sum / array_reviews.length).ceil
       @booking.star_part.save
     else

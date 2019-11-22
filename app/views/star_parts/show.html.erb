@@ -91,10 +91,10 @@
           <%= image_tag @star_part.user.photo %>
             <div class="card-product-infoss">
               <h2>
-                <% @star_part.rating.times do %>
+                <% review.rating.times do %>
                   <i class="fa fa-star text-rose"></i>
                 <% end %>
-                <% (5 - @star_part.rating).times do %>
+                <% (5 - review.rating).times do %>
                   <i class="far fa-star text-rose"></i>
                 <% end %>
               </h2>
