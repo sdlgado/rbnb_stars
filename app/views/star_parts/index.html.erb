@@ -5,7 +5,9 @@
       <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "" %>
       <%= link_to "Search", star_parts_path, class: "bg-rose-search" %>
       <% end %>
-  <p id="typed-js" class="my-2"></p>
+  <p class="my-2">
+    <span id="typed-js"></span>
+  </p>
   </div>
 <br>
     <div>You have <%=pluralize @star_parts.count, 'result'%></div>
