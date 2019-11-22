@@ -25,8 +25,9 @@ class BookingsController < ApplicationController
     skip_authorization
     if params[:star_part_id] && params[:booking][:start_date] != ""
       @star_part = StarPart.find(params[:star_part_id])
+
       start_date = Date.parse(params[:booking][:start_date].split(" to ")[0])
-      end_date = Date.parse(params[:booking][:start_date].split(" to ")[1])
+      end_date = params[:booking][:start_date].split(" to ")[1].nil? ? start_date : Date.parse(params[:booking][:start_date].split(" to ")[1])
       price = params[:booking][:price]
       message = params[:booking][:message]
       user_id = current_user.id
@@ -48,8 +49,12 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    @booking_id = @booking.id
     @booking.destroy
     authorize @booking
-    redirect_to account_path
+    respond_to do |format|
+      format.html { redirect_to account_path }
+      format.js
+    end
   end
 end

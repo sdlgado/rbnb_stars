@@ -46,7 +46,8 @@ class StarPartsController < ApplicationController
     @star_part = StarPart.new(star_part_params.merge(user_id: current_user.id).merge(rating: 0)) # pour le user_id
     authorize @star_part
     if @star_part.save!
-      redirect_to star_parts_path
+      redirect_to parts_path
+      flash[:alert] = " on your car!"
     else
       render :new
     end

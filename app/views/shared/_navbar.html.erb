@@ -22,11 +22,18 @@
   <% else %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <% count = 0 %>
+        <% current_user.star_parts.each do |star_part| %>
+          <% count += star_part.bookings.select { |b| b.confirmed == "pending" }.length %>
+        <% end %>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
+          <% if count > 0 %>
+            <p class="notif"><%= count %></p>
+          <% end %>
             <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-          <%= image_tag "brad.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "brad.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My bookings", account_path, class: "dropdown-item" %>
@@ -34,8 +41,10 @@
             <% current_user.star_parts.each do |star_part| %>
             <% count += star_part.bookings.select { |b| b.confirmed == "pending" }.length %>
             <% end %>
-            <%= link_to "My pending booking requests (#{count})", pending_path, class: "dropdown-item" %>
             <%= link_to "My parts", parts_path, class: "dropdown-item" %>
+            <%= link_to pending_path, class: "dropdown-item" do %>
+              <p>My pending booking requests <span><%= count %></span></p>
+            <% end %>
             <br>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
