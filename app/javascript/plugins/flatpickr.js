@@ -5,7 +5,7 @@ const toggleDateInputs = function() {
   const bookAgain = document.querySelectorAll('.book-again');
   const startDateInput = document.getElementById('booking_start_date');
   const book = document.querySelector('[data-disable-with="Book"]')
-  book.disabled = true
+  if (book) { book.disabled = true }
   bookAgain.forEach((cta) => {
 
     cta.addEventListener('click', (event) => {

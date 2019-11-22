@@ -1,18 +1,20 @@
 <div class="container">
-  <p style="text-align: center; font-size: 28px;">Edit your part</p>
+  <div class="bg-light border-rose">
+    <%= simple_form_for @star_part do |f| %>
+      <%= f.input :name_of_star %>
+      <%= f.input :name_of_part %>
+      <%= f.input :rating %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :category %>
+      <%= f.input :photo, as: :file %>
+      <% f.input :address %>
 
-  <%= simple_form_for @star_part do |f| %>
-    <%= f.input :name_of_star %>
-    <%= f.input :name_of_part %>
-    <%= f.input :rating %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :category %>
-    <%= f.input :photo, as: :file %>
-    <% f.input :address %>
-
-    <p style="text-align: center"><%= f.submit "Change it !", class: 'btn btn-primary' %></p>
-  <% end %>
-
-  <p style="text-align: center"><%=link_to "Back to list", star_parts_path%></p>
+      <p style="text-align: left"><%= f.submit "Change it !", class: 'bg-rose' %></p>
+    <% end %>
+    <div class="d-flex justify-content-between">
+      <p style="text-align: right"><%=link_to "Back to my parts", parts_path, class: "link-rose"%></p>
+      <p><%= link_to "Delete", star_part_path(@star_part), method: :delete, class: "link-rose", data: { confirm: "Are you sure?"} %></p>
+    </div>
+  </div>
 </div>
