@@ -1,0 +1,6 @@
+function refuseBookings() {
+  const bookingDestroyed = document.querySelector("[data-booking-id='<%=@booking.id%>']");
+  bookingDestroyed.remove();
+}
+
+refuseBookings();
