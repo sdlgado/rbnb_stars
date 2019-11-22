@@ -46,7 +46,7 @@ class StarPartsController < ApplicationController
     @star_part = StarPart.new(star_part_params.merge(user_id: current_user.id).merge(rating: 0)) # pour le user_id
     authorize @star_part
     if @star_part.save
-      redirect_to star_parts_path
+      redirect_to parts_path
     else
       render :new
     end
@@ -55,7 +55,7 @@ class StarPartsController < ApplicationController
   def update
     @star_part = StarPart.find(params[:id])
     if @star_part.update(star_part_params)
-      redirect_to star_parts_path
+      redirect_to parts_path
     else
       render :edit
     end
