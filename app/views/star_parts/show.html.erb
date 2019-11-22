@@ -29,9 +29,13 @@
       <p style="font-size: 16px;"> <%= @star_part.description %> </p>
       <h5> <strong>Price:</strong> €  <%= @star_part.price %> / day</h5>
       <br>
+  <% if user_signed_in? %>
       <button type="button" class="btn-lg bg-rose button-product" data-toggle="modal" data-target="#exampleModal">
         Book Now!
       </button>
+  <% else %>
+  <%= link_to "Please login to book a part", new_user_session_path, class: "nav-link bg-rose" %>
+  <% end %>
 
   <% if policy(@star_part).edit? && policy(@star_part).destroy? %>
     <% if policy(@star_part).edit? %>
@@ -44,6 +48,7 @@
   <% end %>
     </div>
   </div>
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -69,6 +74,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="container pt-4">
   <div class="row">
