@@ -23,8 +23,8 @@
             </div>
           <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
           <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>
-            <%= link_to star_part_path(part), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-rose ml-2 edit-part" do %>
-              <i class="fas fa-trash"></i>
+            <%= link_to edit_star_part_path(part), class: "text-rose ml-2 edit-part" do %>
+              <i class="fas fa-pen-square"></i>
             <% end %>
           </div>
         </div>

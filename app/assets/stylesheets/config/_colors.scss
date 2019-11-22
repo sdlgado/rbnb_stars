@@ -67,6 +67,14 @@ $rose-hover: rgba(247, 9, 156, 1);
   border-right: solid 1px $rose;
 }
 
+.border-rose {
+  border: solid 1px $rose;
+  box-shadow: 0 2px 4px $rose-faded;
+  padding: 5em;
+  margin-top: 2em;
+  border-radius: 2px;
+}
+
 .declined {
   color: rgba(237, 76, 103,1.0);
 }
