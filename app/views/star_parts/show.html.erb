@@ -74,32 +74,29 @@
   <div class="row">
     <div class="col">
     </div>
+
     <div class="col-8">
-
-        <% if @star_part.reviews.blank? %>
-        <p style="font-size: 18px;">No reviews for now.</p>
+      <% if @star_part.reviews.blank? %>
+        <p style="font-size: 16px;">No reviews for now. Be the first to leave a review by booking <%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %>!</p>
       <% else %>
-      <p style="font-size: 18px;"><%= @star_part.reviews.size %> Reviews: </p>
-
+        <p style="font-size: 18px;"><%= pluralize @star_part.reviews.size, "Review" %> : </p>
         <% @star_part.reviews.each do |review| %>
-      <div class="card-product-show-reviews">
-
-      <%= image_tag @star_part.user.photo %>
-
-      <div class="card-product-infoss">
-          <% @star_part.rating.times do %>
-        <h2><i class="fa fa-star text-rose"></i>
-          <% end %>
-          <% (5 - @star_part.rating).times do %>
-            <i class="far fa-star text-rose"></i></h2>
-          <% end %>
-      </div>
-        <p><%= review.content %></p>
-    </div>
+          <div class="card-product-show-reviews mb-4 ">
+          <%= image_tag @star_part.user.photo %>
+            <div class="card-product-infoss">
+              <% @star_part.rating.times do %>
+                <p  "style="font-size: 18px;"><%= review.content.capitalize() %></p>
+                <h2><i class="fa fa-star text-rose"></i>
+              <% end %>
+              <% (5 - @star_part.rating).times do %>
+                <i class="far fa-star text-rose"></i></h2>
+              <% end %>
+            </div>
+            <p style="font-size: 18px; margin-left: 20px;"><strong><%= @star_part.user.first_name.capitalize() %> </strong> said: <%= review.content.capitalize() %></p>
+            </div>
+            <% end %>
+          </div>
       <% end %>
-    <% end %>
-    </div>
-
 
     <div class="col">
     </div>
