@@ -26,15 +26,15 @@ label.etoile:before {
 }
 label.etoile:hover,
 label.etoile:hover ~ .etoile {
-  color: #F6C82C;
+  color: $rose;
   transition: 0.2s;
 }
 input:checked ~ label.etoile {
-  color: #F6C82C;
+  color: $rose;
 }
 input:checked ~ label.etoile:hover,
 input:checked ~ label.etoile:hover ~ label.etoile {
-  color: #FFED85;
+  color: $rose-faded;
   transition: 0.2s;
 }
 
