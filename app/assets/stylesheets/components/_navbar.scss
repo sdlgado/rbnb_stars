@@ -6,6 +6,8 @@
   top: 0;
   width: 100%;
   z-index: 4;
+  border-bottom: 1px solid $rose;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -47,10 +49,13 @@ h1 h2 h3 h4 h5 h6 {
 
 .transparent-navbar {
   background-color: transparent;
+  border-bottom: transparent;
+
 }
 
 .navbar-lewagon-white {
   background-color: white;
+  border-bottom: 1px solid $rose;
 }
 
 .dropdown-item span {

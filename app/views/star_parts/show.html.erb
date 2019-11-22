@@ -1,13 +1,20 @@
-<div class="container mt-4">
+<div class="container mt-4 ">
   <%= link_to star_parts_path do %>
-    <i class="fas fa-arrow-left pl-0"></i>
+    <i class="fas fa-arrow-left pl-0 pb-3"></i>
   <% end %>
+  <div
+      id="map"
+      style="width: 100%;
+      height: 200px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
-  <div class="row">
-    <div class="col rounded bg-light shadow-sm p-5 m-2">
-      <%= cl_image_tag(@star_part.photo.key, :width => 500) %>
+  </div>
+  <div class="row pt-4">
+    <div class="col">
+      <%= cl_image_tag(@star_part.photo.key, class: "img-product") %>
     </div>
-    <div class="col rounded bg-light shadow-sm p-5 m-2">
+    <div class="col card-product-show">
       <h4><strong><%= @star_part.name_of_star %>'s <%= @star_part.name_of_part.capitalize() %></strong></h5>
       <h5>
       <% @star_part.rating.times do %>
@@ -17,37 +24,23 @@
           <i class="far fa-star text-rose"></i>
         <% end %>
         </h5>
-      <h6> <strong>Category:</strong> <%= @star_part.category.capitalize %></h6>
-
+      <h6><strong>Category:</strong> <%= @star_part.category.capitalize %></h6>
+      <p style="font-size: 18px;"> <strong>Description: </strong> </p>
+      <p style="font-size: 16px;"> <%= @star_part.description %> </p>
+      <h5> <strong>Price:</strong> €  <%= @star_part.price %> / day</h5>
       <br>
-      <h5> <strong> Description: </strong> <h5>
-      <p style="font-size: 18px;"> <%= @star_part.description %> </p>
-      <div class="d-flex justify-content-between mt-5">
-        <h5> <strong>Price:</strong> €  <%= @star_part.price %> / day</h5>
-      </div>
-      <br>
-      <button type="button" class="bg-rose" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn-lg bg-rose button-product" data-toggle="modal" data-target="#exampleModal">
         Book Now!
       </button>
-      <br>
-      <br>
-      <div
-    id="map"
-    style="width: 100%;
-    height: 200px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY=pk.eyJ1IjoidGFuZ3V5NzUiLCJhIjoiY2syZzdkdHl4MHEyazNkcGI5Zmp6bmdtbCJ9.7uESNvb-0O8bcweajv4wBw
-'] %>"
-  ></div>
-  <% if policy(@star_part).edit? && policy(@star_part).destroy? %>
 
-  <% if policy(@star_part).edit? %>
-    <%= link_to "Update", edit_star_part_path(@star_part), class: "btn-sm btn-secondary mt-5 mb-5" %>
-  <% end %>
+  <% if policy(@star_part).edit? && policy(@star_part).destroy? %>
+    <% if policy(@star_part).edit? %>
+      <%= link_to "Update", edit_star_part_path(@star_part), class: "btn-sm btn-secondary mt-5 mb-5" %>
+    <% end %>
   or
-  <% if policy(@star_part).destroy? %>
-    <%= link_to 'Delete', star_part_path(@star_part), class: "btn-sm btn-secondary mt-5 mb-5", method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+    <% if policy(@star_part).destroy? %>
+      <%= link_to 'Delete', star_part_path(@star_part), class: "btn-sm btn-secondary mt-5 mb-5", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   <% end %>
     </div>
   </div>
@@ -75,29 +68,41 @@
       </div>
     </div>
   </div>
- </div>
+</div>
 
-<div id="reviews">
-    <% if @star_part.reviews.blank? %>
-      No reviews for now.
-    <% else %>
-    <h2><%= pluralize @star_part.reviews.size, "reviews" %></h2>
-      <ul>
-      <% @star_part.reviews.each do |review| %>
-        <li>
-        <li>
+<div class="container pt-4">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-8">
+
+        <% if @star_part.reviews.blank? %>
+        <p style="font-size: 18px;">No reviews for now.</p>
+      <% else %>
+      <p style="font-size: 18px;"><%= @star_part.reviews.size %> Reviews: </p>
+
+        <% @star_part.reviews.each do |review| %>
+      <div class="card-product-show-reviews">
+
+      <%= image_tag @star_part.user.photo %>
+
+      <div class="card-product-infoss">
           <% @star_part.rating.times do %>
-                  <i class="fa fa-star text-rose"></i>
-              <% end %>
-              <% (5 - @star_part.rating).times do %>
-                  <i class="far fa-star text-rose"></i>
-              <% end %>
-        </li>
-         <li> <%= review.content %>
-        </li>
+        <h2><i class="fa fa-star text-rose"></i>
+          <% end %>
+          <% (5 - @star_part.rating).times do %>
+            <i class="far fa-star text-rose"></i></h2>
+          <% end %>
+      </div>
+        <p><%= review.content %></p>
+    </div>
       <% end %>
-     </ul>
     <% end %>
+    </div>
+
+
+    <div class="col">
+    </div>
   </div>
 </div>
 

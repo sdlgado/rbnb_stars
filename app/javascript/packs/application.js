@@ -12,6 +12,6 @@ toggleDateInputs();
 loadDynamicBannerText();
 navbarTransparent();
 initUpdateNavbarOnScroll();
-// initMapbox();
+initMapbox();
 loadDynamicBannerText();
 rate();
