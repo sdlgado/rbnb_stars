@@ -16,9 +16,10 @@ class ReviewsController < ApplicationController
       @booking.star_part.reviews.each do |review|
         array_reviews << review.rating
       end
+      star_part = StarPart.find(@booking.star_part.id)
+      star_part.rating = array_reviews.length == 0 ? 0 : (array_reviews.sum / array_reviews.length).ceil
+      star_part.save
       redirect_to star_part_path(@booking.star_part)
-      @booking.star_part.rating = array_reviews.length == 0 ? 0 : (array_reviews.sum / array_reviews.length).ceil
-      @booking.star_part.save
     else
       render :new
     end

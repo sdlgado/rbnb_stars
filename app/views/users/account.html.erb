@@ -72,7 +72,9 @@
       <% end %>
       <!-- passed -->
       <h1 class="pt-2">Your latest bookings</h1>
+      <% count = 0 %>
       <% @user.bookings[0..3].each do |booking| %>
+      <% count += 1 %>
         <% if booking.end_date < Time.now %>
           <div class="booking rouded border mt-1 rounded shadow-sm profile-part-info d-flex justify-content-between align-items-center">
             <div class="profile-part-info-left d-flex justify-content-start align-items-center">
@@ -82,29 +84,23 @@
               <div class="profil-part-info-text">
                 <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
-                <button type="button" class="link-rose book-again" data-toggle="modal" data-target="#exampleModal" id=<%= booking.star_part.id %>>
-                Book Again
-              </button>
-              </div>
-            </div>
-            <% if booking.star_part.reviews.select { |review| review.user_id == current_user.id }.count > 0 %>
-              <div class="review-done mr-3"><i class="fas fa-check mr-2"></i>You already left a review!</div>
-            <% else %>
-              <%= link_to "leave a review", new_star_part_booking_review_path(booking.star_part, booking), class: "bg-rose mr-3" %>
-            <% end %>
+                <button type="button" class="link-rose book-again" data-toggle="modal" data-target="#exampleModal<%=count%>" id=<%= booking.star_part.id %>>
+                  Book Again
+                </button>
             <!-- Modal -->
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id= "<%= "exampleModal" + "#{count}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Book</h5>
+                    <h5 class="modal-title" id="exampleModal1Label">Book</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                        <%= simple_form_for [booking.star_part, Booking.new] do |f| %>
+                        <% a = booking.star_part %>
+                        <%= simple_form_for [a, Booking.new] do |f| %>
                         <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
                         <%= f.input :message, as: :text %>
                         <%= f.input :price, as: :string, readonly: true, input_html: {value: booking.star_part.price} %>
@@ -121,6 +117,13 @@
             </div>
 
             <!-- end of modal -->
+              </div>
+            </div>
+            <% if booking.star_part.reviews.select { |review| review.user_id == current_user.id }.count > 0 %>
+              <div class="review-done mr-3"><i class="fas fa-check mr-2"></i>You already left a review!</div>
+            <% else %>
+              <%= link_to "leave a review", new_star_part_booking_review_path(booking.star_part, booking), class: "bg-rose mr-3" %>
+            <% end %>
 
           </div>
         <% end %>

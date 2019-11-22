@@ -94,7 +94,7 @@ cardi = StarPart.new({
   category: "bottom",
   description: "Caution: this butt might bust out!",
   name_of_part: "butt",
-  rating: 0,
+  rating: rand(1..5),
   price: 90000,
   address: "1741-1701 N Las Palmas Ave
   Los Angeles, CA 90028, États-Unis"
@@ -112,7 +112,7 @@ beyonce = StarPart.new({
   category: "bottom",
   description: "So many hours of practice in just one click 👇 Book now!",
   name_of_part: "butt",
-  rating: 0,
+  rating: rand(1..5),
   price: 90000,
   address: "2100-2154 Canyon Dr Los Angeles, CA 90068 États-Unis"
 })
@@ -128,7 +128,7 @@ kim = StarPart.new({
   category: "bottom",
   description: "Isn't this butt famous for crashing the Internet? You need it!",
   name_of_part: "butt",
-  rating: 0,
+  rating: rand(1..5),
   price: 30000,
   address: "1025 N Fairfax Ave West Hollywood, CA 90046, États-Unis"
 })
@@ -145,7 +145,7 @@ scarlett = StarPart.new({
   category: "bust",
   description: "With this bust, we bet you will you want to show off your cleavage all day long… Look me in the eyes!",
   name_of_part: "breasts",
-  rating: 0,
+  rating: rand(1..5),
   price: 50000,
   address: "936 N Formosa Ave Los Angeles, CA 90046, États-Unis"
 })
@@ -161,7 +161,7 @@ lebron = StarPart.new({
   category: "bust",
   description: "Aaaaaand, duuuuuunk! These arms will give you superpowers… use with caution",
   name_of_part: "arms",
-  rating: 0,
+  rating: rand(1..5),
   price: 20000,
   address: "Little Havana Miami, Floride, États-Unis"
 })
@@ -178,7 +178,7 @@ gad = StarPart.new({
   category: "head",
   description: "Beautiful blue eyes to match the color of the sea during your holidays at the beach",
   name_of_part: "eyes",
-  rating: 0,
+  rating: rand(1..5),
   price: 6000,
   address: "48 rue du Louvre, Paris"
 })
@@ -197,7 +197,7 @@ jason = StarPart.new({
   category: "bust",
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
-  rating: 0,
+  rating: rand(1..5),
   price: 10000,
   address: "900-1000 Crescent Heights Blvd Los Angeles, CA 90046, États-Unis"
 })
@@ -214,7 +214,7 @@ adriana = StarPart.new({
   category: "bottom",
   description: "Get those superb legs to be the queen of the beach",
   name_of_part: "legs",
-  rating: 0,
+  rating: rand(1..5),
   price: 100000,
   address: "Camaçari Bahia, Brésil"
 })
@@ -231,7 +231,7 @@ al = StarPart.new({
   category: "head",
   description: "Moustaches are back in trend… get yours!",
   name_of_part: "moustache",
-  rating: 0,
+  rating: rand(1..5),
   price: 5000,
   address: "6767 Hollywood Blvd Los Angeles, CA 90028, États-Unis"
 })
@@ -248,7 +248,7 @@ robert = StarPart.new({
   category: "head",
   description: "No bad hair day anymore… and you don't even have to buy a wig!",
   name_of_part: "hair",
-  rating: 0,
+  rating: rand(1..5),
   price: 3000,
   address: "7198-7150 Waring Ave Los Angeles, CA 90046, États-Unis"
 })
@@ -265,7 +265,7 @@ johnny = StarPart.new({
   category: "head",
   description: "Want to be a pirate for a bit? Easy with this moustache",
   name_of_part: "moustache",
-  rating: 0,
+  rating: rand(1..5),
   price: 6000,
   address: "1016 Cole Ave Los Angeles, CA 90038, États-Unis"
 })
@@ -282,7 +282,7 @@ bradley = StarPart.new({
   category: "head",
   description: "What a smile, they will say…",
   name_of_part: "smile",
-  rating: 0,
+  rating: rand(1..5),
   price: 12000,
   address: "645 N Ardmore Ave Los Angeles, CA 90004, États-Unis"
 })
@@ -300,7 +300,7 @@ nicole = StarPart.new({
   category: "head",
   description: "Want to be an incendiary red head this weekend?",
   name_of_part: "hair",
-  rating: 0,
+  rating: rand(1..5),
   price: 9000,
   address: "West Hollywood Californie, États-Unis"
 })
@@ -317,7 +317,7 @@ selena = StarPart.new({
   category: "head",
   description: "No need to paint them red, they are also beautiful when left natural",
   name_of_part: "lips",
-  rating: 0,
+  rating: rand(1..5),
   price: 3000,
   address: "Little Armenia Los Angeles, Californie, États-Unis"
 })
@@ -334,7 +334,7 @@ vincent = StarPart.new({
   category: "bust",
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
-  rating: 0,
+  rating: rand(1..5),
   price: 14000,
   address: "St Gervais 75004 Paris"
 })
@@ -351,7 +351,7 @@ omar = StarPart.new({
   category: "head",
   description: "You WILL have fun just because of your smile",
   name_of_part: "smile",
-  rating: 0,
+  rating: rand(1..5),
   price: 28000,
   address: "Melrose Los Angeles, Californie, États-Unis"
 })
@@ -369,7 +369,7 @@ lady = StarPart.new({
   category: "head",
   description: "Impress everyone with those fabulous eyebrows",
   name_of_part: "eyebrows",
-  rating: 0,
+  rating: rand(1..5),
   price: 2000,
   address: "Melrose Los Angeles, Californie, États-Unis"
 })
@@ -386,7 +386,7 @@ kendall = StarPart.new({
   category: "head",
   description: "Legs out!",
   name_of_part: "eyebrows",
-  rating: 0,
+  rating: rand(1..5),
   price: 32000,
   address: "Melrose Los Angeles, Californie, États-Unis"
 })
@@ -404,7 +404,7 @@ cristiano = StarPart.new({
   category: "bust",
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
-  rating: 0,
+  rating: rand(1..5),
   price: 42000,
   address: "Borgo Vittoria Turin, Italie"
 })
@@ -422,7 +422,7 @@ lionel = StarPart.new({
   category: "bottom",
   description: "You will kill the game with those legs",
   name_of_part: "legs",
-  rating: 0,
+  rating: rand(1..5),
   price: 99000,
   address: "C. d'Arístides Maillol, 12, 08028 Barcelona, Espagne"
 })
@@ -440,7 +440,7 @@ serena = StarPart.new({
   category: "bust",
   description: "You will kill the game with those arms",
   name_of_part: "arms",
-  rating: 0,
+  rating: rand(1..5),
   price: 99000,
   address: "100-298 N Kenmore Ave Los Angeles, CA 90004, États-Unis"
 })
@@ -457,7 +457,7 @@ maria = StarPart.new({
   category: "bust",
   description: "You will kill the game with those arms",
   name_of_part: "arms",
-  rating: 0,
+  rating: rand(1..5),
   price: 9000,
   address: "100-298 N Kenmore Ave Los Angeles, CA 90004, États-Unis"
 })
@@ -474,7 +474,7 @@ drake = StarPart.new({
   category: "bust",
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "bust",
-  rating: 0,
+  rating: rand(1..5),
   price: 9000,
   address: "1300 N Laurel Ave West Hollywood, CA 90046, États-Unis"
 })
@@ -492,7 +492,7 @@ dany = StarPart.new({
   category: "head",
   description: "Hein biloute?!",
   name_of_part: "ears",
-  rating: 0,
+  rating: rand(1..5),
   price: 900,
   address: "Lille-Centre Lille"
 })
@@ -511,7 +511,7 @@ megan = StarPart.new({
   category: "head",
   description: "Beautiful blue eyes to match the color of the sea during your holidays at the beach!",
   name_of_part: "eyes",
-  rating: 0,
+  rating: rand(1..5),
   price: 16000,
   address: "District de Fairfax Los Angeles, Californie 90036, États-Unis"
 })
@@ -529,7 +529,7 @@ charlize = StarPart.new({
   category: "head",
   description: "Get those superb legs to be the queen of the beach",
   name_of_part: "legs",
-  rating: 0,
+  rating: rand(1..5),
   price: 32000,
   address: "Matroosfontein Le Cap, 7490, Afrique du Sud"
 })
@@ -546,7 +546,7 @@ taylor = StarPart.new({
   category: "head",
   description: "Beautiful blue eyes to match the color of the sea during your holidays at the beach!",
   name_of_part: "eyes",
-  rating: 0,
+  rating: rand(1..5),
   price: 4000,
   address: "600-670 N Formosa Ave Los Angeles, CA 90036, États-Unis"
 })
@@ -564,7 +564,7 @@ justin = StarPart.new({
   category: "bust",
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
-  rating: 0,
+  rating: rand(1..5),
   price: 3000,
   address: "600-670 N Formosa Ave Los Angeles, CA 90036, États-Unis"
 })
@@ -582,7 +582,7 @@ tom = StarPart.new({
   category: "head",
   description: "What a smile, they will say…",
   name_of_part: "smile",
-  rating: 0,
+  rating: rand(1..5),
   price: 8000,
   address: "8075 Melrose Ave Los Angeles, CA 90046, États-Unis"
 })
@@ -599,7 +599,7 @@ marion = StarPart.new({
   category: "head",
   description: "Beautiful blue eyes to match the color of the sea during your holidays at the beach!",
   name_of_part: "eyes",
-  rating: 0,
+  rating: rand(1..5),
   price: 12000,
   address: "8075 Melrose Ave Los Angeles, CA 90046, États-Unis"
 })
@@ -618,7 +618,7 @@ natalie = StarPart.new({
   category: "head",
   description: "What a smile, they will say…",
   name_of_part: "smile",
-  rating: 0,
+  rating: rand(1..5),
   price: 14000,
   address: "Sainte-Avoye Paris"
 })
@@ -636,7 +636,7 @@ angelina = StarPart.new({
   category: "head",
   description: "Imagine the kisses you'll give with those lips. You'll even want to kiss yourself",
   name_of_part: "lips",
-  rating: 0,
+  rating: rand(1..5),
   price: 8000,
   address: "599-501 N Alta Vista Blvd Los Angeles, CA 90036, États-Unis"
 })
@@ -654,7 +654,7 @@ dwayne = StarPart.new({
   category: "bust",
   description: "Who has never dreamt of having these abs? But going to the gym… ugh, no, thanks!",
   name_of_part: "abs",
-  rating: 0,
+  rating: rand(1..5),
   price: 8000,
   address: "599-501 N Alta Vista Blvd Los Angeles, CA 90036, États-Unis"
 })
@@ -673,7 +673,7 @@ romain = StarPart.new({
   category: "head",
   description: "What a smile, they will say…",
   name_of_part: "smile",
-  rating: 0,
+  rating: rand(1..5),
   price: 12000,
   address: "Saint-Merri 75004 Paris"
 })
@@ -691,7 +691,7 @@ francois = StarPart.new({
   category: "head",
   description: "No bad hair day anymore… and you don't even have to buy a wig!",
   name_of_part: "hair",
-  rating: 0,
+  rating: rand(1..5),
   price: 3000,
   address: "Oberkampf 75011 Paris"
 })
@@ -710,7 +710,7 @@ jean = StarPart.new({
   category: "head",
   description: "What a smile, all the girls will say…",
   name_of_part: "smile",
-  rating: 0,
+  rating: rand(1..5),
   price: 3000,
   address: "Cour Damoye 75011 Paris"
 })
@@ -738,7 +738,7 @@ Booking.create!(
   end_date: Time.new(2019, 10, 2),
   user_id: tanguy.id,
   star_part_id: nicole.id,
-  confirmed: "Accepted"
+  confirmed: "Pending"
 )
 Booking.create!(
   start_date: Time.new(2019, 9, 26),
@@ -796,7 +796,7 @@ Booking.create!(
   end_date: Time.new(2019, 9, 30),
   user_id: adelaide.id,
   star_part_id: lionel.id,
-  confirmed: "Accepted"
+  confirmed: "Declined"
 )
 Booking.create!(
   start_date: Time.new(2019, 9, 28),
@@ -847,14 +847,14 @@ Booking.create!(
   end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: dwayne.id,
-  confirmed: "Accepted"
+  confirmed: "Declined"
 )
 Booking.create!(
   start_date: Time.new(2019, 10, 03),
   end_date: Time.new(2019, 10, 5),
   user_id: thibaud.id,
   star_part_id: maria.id,
-  confirmed: "Accepted"
+  confirmed: "Pending"
 )
 puts "seeds booking thibaud done!"
 puts "seeds booking sergio starts"
@@ -884,7 +884,7 @@ Booking.create!(
   end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: vincent.id,
-  confirmed: "Accepted"
+  confirmed: "Pending"
 )
 Booking.create!(
   start_date: Time.new(2019, 9, 30),
@@ -898,7 +898,7 @@ Booking.create!(
   end_date: Time.new(2019, 10, 3),
   user_id: sergio.id,
   star_part_id: romain.id,
-  confirmed: "Accepted"
+  confirmed: "Pending"
 )
 puts "seeds booking sergio done!"
 puts "seeds booking barbara starts"
@@ -951,7 +951,7 @@ Booking.create!(
   end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: gad.id,
-  confirmed: "Accepted"
+  confirmed: "Declined"
 )
 Booking.create!(
   start_date: Time.new(2019, 9, 30),
@@ -986,7 +986,7 @@ Booking.create!(
   end_date: Time.new(2019, 10, 3),
   user_id: helene.id,
   star_part_id: tom.id,
-  confirmed: "Accepted"
+  confirmed: "Declined"
 )
 puts "seeds booking helene done!"
 puts "seeds reviews tanguy starts"
