@@ -12,7 +12,9 @@
   <%= f.input :category, :collection => ["bottom", "head", "bust"] %>
   <%= f.input :price, :label => "Price per night (in €)" %>
   <%= f.input :description, :label => "Please describe the body part"%>
-  <%= f.input :address %>
+  <%= f.input :address, :input_html => {
+        :id => "place"
+      }%>
   <%= f.input :photo, as: :file %>
 
 <p style="text-align: center"><%= f.submit "Submit", class: 'bg-rose mr-3'%></p>
