@@ -307,7 +307,7 @@ nicole = StarPart.new({
 
 nicole.user_id = thibaud.id
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxzdIP5uI46LQXxT28S2EERyuV0ywJRzLSy0MwRLyYD7P8y-yt&s')
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Nicole_Kidman_Cannes_2017_4.jpg/260px-Nicole_Kidman_Cannes_2017_4.jpg')
 nicole.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 nicole.save
 
@@ -731,42 +731,42 @@ Booking.create!(
   end_date: Time.new(2020, 10, 2),
   user_id: tanguy.id,
   star_part_id: jason.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 26),
   end_date: Time.new(2020, 10, 2),
   user_id: tanguy.id,
   star_part_id: nicole.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 26),
   end_date: Time.new(2020, 10, 2),
   user_id: tanguy.id,
-  star_part_id: cirstiano.id,
-  status: accepted
+  star_part_id: cristiano.id,
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 26),
   end_date: Time.new(2020, 10, 2),
   user_id: tanguy.id,
   star_part_id: megan.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 26),
   end_date: Time.new(2020, 10, 2),
   user_id: tanguy.id,
   star_part_id: natalie.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 26),
   end_date: Time.new(2020, 10, 2),
   user_id: tanguy.id,
   star_part_id: adriana.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 puts "seeds booking tanguy done!"
 puts "seeds booking ade starts"
@@ -775,42 +775,42 @@ Booking.create!(
   end_date: Time.new(2020, 9, 30),
   user_id: adelaide.id,
   star_part_id: cardi.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 28),
   end_date: Time.new(2020, 9, 30),
   user_id: adelaide.id,
   star_part_id: beyonce.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 28),
   end_date: Time.new(2020, 9, 30),
   user_id: adelaide.id,
   star_part_id: selena.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 28),
   end_date: Time.new(2020, 9, 30),
   user_id: adelaide.id,
   star_part_id: lionel.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 28),
   end_date: Time.new(2020, 9, 30),
   user_id: adelaide.id,
   star_part_id: charlize.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 28),
   end_date: Time.new(2020, 9, 30),
   user_id: adelaide.id,
   star_part_id: angelina.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 puts "seeds booking ade done!"
 puts "seeds booking thibaud starts"
@@ -819,42 +819,42 @@ Booking.create!(
   end_date: Time.new(2020, 10, 5),
   user_id: thibaud.id,
   star_part_id: kim.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 10, 03),
   end_date: Time.new(2020, 10, 5),
   user_id: thibaud.id,
   star_part_id: al.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 10, 03),
   end_date: Time.new(2020, 10, 5),
   user_id: thibaud.id,
   star_part_id: serena.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 10, 03),
   end_date: Time.new(2020, 10, 5),
   user_id: thibaud.id,
   star_part_id: taylor.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 10, 03),
   end_date: Time.new(2020, 10, 5),
   user_id: thibaud.id,
   star_part_id: dwayne.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 10, 03),
   end_date: Time.new(2020, 10, 5),
   user_id: thibaud.id,
   star_part_id: maria.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 puts "seeds booking thibaud done!"
 puts "seeds booking sergio starts"
@@ -863,42 +863,42 @@ Booking.create!(
   end_date: Time.new(2020, 10, 3),
   user_id: sergio.id,
   star_part_id: scarlett.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: sergio.id,
   star_part_id: robert.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: sergio.id,
   star_part_id: omar.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: sergio.id,
   star_part_id: vincent.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: sergio.id,
   star_part_id: justin.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: sergio.id,
   star_part_id: romain.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 puts "seeds booking sergio done!"
 puts "seeds booking barbara starts"
@@ -907,42 +907,42 @@ Booking.create!(
   end_date: Time.new(2020, 10, 1),
   user_id: barbara.id,
   star_part_id: lebron.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 29),
   end_date: Time.new(2020, 10, 1),
   user_id: barbara.id,
   star_part_id: johnny.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 29),
   end_date: Time.new(2020, 10, 1),
   user_id: barbara.id,
   star_part_id: lady.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 29),
   end_date: Time.new(2020, 10, 1),
   user_id: barbara.id,
   star_part_id: drake.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 29),
   end_date: Time.new(2020, 10, 1),
   user_id: barbara.id,
   star_part_id: francois.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 29),
   end_date: Time.new(2020, 10, 1),
   user_id: barbara.id,
   star_part_id: jean.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 puts "seeds booking barbara done!"
 puts "seeds booking helene starts"
@@ -951,77 +951,78 @@ Booking.create!(
   end_date: Time.new(2020, 10, 3),
   user_id: helene.id,
   star_part_id: gad.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10,3),
   user_id: helene.id,
   star_part_id: bradley.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: helene.id,
   star_part_id: kendall.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: helene.id,
   star_part_id: dany.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: helene.id,
   star_part_id: marion.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 Booking.create!(
   start_date: Time.new(2020, 9, 30),
   end_date: Time.new(2020, 10, 3),
   user_id: helene.id,
   star_part_id: tom.id,
-  status: accepted
+  confirmed: "Accepted"
 )
 puts "seeds booking helene done!"
 puts "seeds reviews tanguy starts"
+
 Review.create!(
-  content: Review.new("Amazing, so good !"),
+  content: "Amazing, so good !",
   rating: 4,
   booking_id: jason.id,
   user_id: tanguy.id,
 )
 Review.create!(
-  content: Review.new("I loved it"),
+  content: "I loved it",
   rating: 4,
   booking_id: nicole.id,
   user_id: tanguy.id,
 )
 Review.create!(
-  content: Review.new("Not as good as in the picture"),
+  content: "Not as good as in the picture",
   rating: 2,
   booking_id: cristiano.id,
   user_id: tanguy.id,
 )
 Review.create!(
-  content: Review.new("So good !"),
+  content: "So good !",
   rating: 5,
   booking_id: megan.id,
   user_id: tanguy.id,
 )
 Review.create!(
-  content: Review.new("yeah bro, I win !"),
+  content: "yeah bro, I win !",
   rating: 4,
   booking_id: natalie.id,
   user_id: tanguy.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: adriana.id,
   user_id: tanguy.id,
@@ -1029,37 +1030,37 @@ Review.create!(
 puts "seeds reviews tanguy done"
 puts "seeds reviews ade starts"
 Review.create!(
-  content: Review.new("this was great !"),
+  content: "this was great !",
   rating: 4,
   booking_id: cardi.id,
   user_id: adelaide.id,
 )
 Review.create!(
-  content: Review.new("Beautiful !"),
+  content: "Beautiful !",
   rating: 4,
   booking_id: beyonce.id,
   user_id: adelaide.id,
 )
 Review.create!(
-  content: Review.new("nice one"),
+  content: "nice one",
   rating: 3,
   booking_id: selena.id,
   user_id: adelaide.id,
 )
 Review.create!(
-  content: Review.new("Great so happy !"),
+  content: "Great so happy !",
   rating: 4,
   booking_id: lionel.id,
   user_id: adelaide.id,
 )
 Review.create!(
-  content: Review.new("So happy this was amazing !"),
+  content: "So happy this was amazing !",
   rating: 5,
   booking_id: charlize.id,
   user_id: adelaide.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: angelina.id,
   user_id: adelaide.id,
@@ -1067,75 +1068,75 @@ Review.create!(
 puts "seeds reviews ade done"
 puts "seeds reviews thibaud starts"
 Review.create!(
-  content: Review.new("Gogeous !"),
+  content: "Gorgeous !",
   rating: 5,
   booking_id: kim.id,
-  user_id: thibaut.id,
+  user_id: thibaud.id,
 )
 Review.create!(
-  content: Review.new("nice ! i'm so happy now !"),
+  content: "nice ! i'm so happy now !",
   rating: 5,
   booking_id: al.id,
-  user_id: thibaut.id,
+  user_id: thibaud.id,
 )
 Review.create!(
-  content: Review.new("not as cool as I thought"),
+  content: "not as cool as I thought",
   rating: 2,
   booking_id: serena.id,
-  user_id: thibaut.id,
+  user_id: thibaud.id,
 )
 Review.create!(
-  content: Review.new("So fun !"),
+  content: "So fun !",
   rating: 4,
   booking_id: taylor.id,
   user_id: thibaud.id,
 )
 Review.create!(
-  content: Review.new("i'm really happy with it !"),
+  content: "i'm really happy with it !",
   rating: 4,
   booking_id: dwayne.id,
-  user_id: thibaut.id,
+  user_id: thibaud.id,
 )
 Review.create!(
-  content: Review.new("oh yeah !"),
+  content: "oh yeah !",
   rating: 4,
   booking_id: maria.id,
-  user_id: thibaut.id,
+  user_id: thibaud.id,
 )
 puts "seeds reviews thibaud done"
 puts "seeds reviews sergio starts"
 Review.create!(
-  content: Review.new("I'm so powerful !"),
+  content: "I'm so powerful !",
   rating: 4,
   booking_id: scarlett.id,
   user_id: sergio.id,
 )
 Review.create!(
-  content: Review.new("yeah !"),
+  content: "yeah !",
   rating: 3,
   booking_id: robert.id,
   user_id: sergio.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: vincent.id,
   user_id: sergio.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: omar.id,
   user_id: sergio.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: justin.id,
   user_id: sergio.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: romain.id,
   user_id: sergio.id,
@@ -1143,37 +1144,37 @@ Review.create!(
 puts "seeds reviews sergio done"
 puts "seeds reviews barbara starts"
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: lebron.id,
   user_id: barbara.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: johnny.id,
   user_id: barbara.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: lady.id,
   user_id: barbara.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: drake.id,
   user_id: barbara.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: francois.id,
   user_id: barbara.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: jean.id,
   user_id: barbara.id,
@@ -1181,37 +1182,37 @@ Review.create!(
 puts "seeds reviews barbara done"
 puts "seeds reviews helene starts"
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: gad.id,
   user_id: helene.id,
 )
 Review.create!(
-  content: Review.new("So sexy !"),
+  content: "So sexy !",
   rating: 5,
   booking_id: bradley.id,
   user_id: helene.id,
 )
 Review.create!(
-  content: Review.new("So sexy !"),
+  content: "So sexy !",
   rating: 5,
   booking_id: kendall.id,
   user_id: helene.id,
 )
 Review.create!(
-  content: Review.new("I was so strong !"),
+  content: "I was so strong !",
   rating: 3,
   booking_id: dany.id,
   user_id: helene.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: marion.id,
   user_id: helene.id,
 )
 Review.create!(
-  content: Review.new("this was cool !"),
+  content: "this was cool !",
   rating: 3,
   booking_id: tom.id,
   user_id: helene.id,
