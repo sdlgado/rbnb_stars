@@ -26,10 +26,13 @@ class StarPartsController < ApplicationController
   def show
     @star_part = StarPart.find(params[:id])
     # @star_part = StarPart.geocoded # returns flats with coordinates
+    @star_parts = StarPart.geocoded
     @markers =
       [{
         lat: @star_part.latitude,
-        lng: @star_part.longitude
+        lng: @star_part.longitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { star_part: @star_part }),
+        image_url: helpers.asset_url('pink-cursor.jpg')
       }]
   end
 
