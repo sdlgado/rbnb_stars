@@ -12,7 +12,20 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  position: relative;
 }
+
+.navbar-collapse notif {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 25px;
+  height: 25px;
+  background-color: $rose;
+  border-radius: 50%;
+  color: white;
+}
+
 
 .mr-auto {
   align-items: center;
@@ -43,4 +56,14 @@ h1 h2 h3 h4 h5 h6 {
 .navbar-lewagon-white {
   background-color: white;
   border-bottom: 1px solid $rose;
+}
+
+.dropdown-item span {
+  display: inline-block;
+  background-color: $rose;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
 }
