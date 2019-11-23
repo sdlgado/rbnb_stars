@@ -88,7 +88,7 @@
         <p style="font-size: 18px;"><%= pluralize @star_part.reviews.size, "Review" %> : </p>
         <% @star_part.reviews.each do |review| %>
           <div class="card-product-show-reviews mb-4 ">
-          <%= image_tag @star_part.user.photo %>
+          <%= image_tag review.user.photo %>
             <div class="card-product-infoss">
               <h2>
                 <% review.rating.times do %>
@@ -99,7 +99,7 @@
                 <% end %>
               </h2>
             </div>
-            <p style="font-size: 18px; margin-left: 20px; margin-top: 0"><strong><%= @star_part.user.first_name.capitalize() %> </strong> said: <%= review.content.capitalize() %></p>
+            <p style="font-size: 18px; margin-left: 20px; margin-top: 0"><strong><%= review.user.first_name.capitalize() %> </strong> said: <%= review.content.capitalize() %></p>
             </div>
             <% end %>
           </div>
