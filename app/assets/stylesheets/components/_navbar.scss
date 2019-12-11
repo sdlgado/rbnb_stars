@@ -10,6 +10,24 @@
 
 }
 
+.logo {
+  font-family: 'Raleway';
+  font-size: 48px;
+  font-weight: bolder;
+  color: $rose;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   position: relative;

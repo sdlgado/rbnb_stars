@@ -1,13 +1,13 @@
 <div class="banner" id="banner-hp">
-  <%= image_tag "landing.png", alt: "alttext" %>
+  <%= image_tag "landing.jpg", alt: "alttext" %>
   <div class="container-text">
-    <h1>Be the brightest star of them all <em>l'espace d'un instant</em></h1>
+    <h1>Get out of here, <em>rent a beach.</em></h1>
   </div>
 </div>
 
 <div class="container-home m-5">
   <div class="d-flex justify-content-between border-bottom-rose">
-    <h2>THE best rated body parts</h2>
+    <h2>THE best rated beaches</h2>
     <%= link_to "Discover the parts", star_parts_path, class: "link-rose"  %>
   </div>
     <ul class="flex-container">
@@ -27,7 +27,7 @@
                     <i class="far fa-star text-rose"></i>
                 <% end %>
               </small>
-              <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
+              <h5><%= part.name_of_star %></h5>
             </div>
           <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
           <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>
@@ -40,7 +40,7 @@
 
 <div class="container-home m-5">
   <div class="d-flex justify-content-between border-bottom-rose">
-    <h2>Want to be a bad ass with a good ass?</h2>
+    <h2>Want a beach with trees?</h2>
     <%= link_to "Discover the parts", star_parts_path, class: "link-rose"  %>
   </div>
     <ul class="flex-container">
@@ -62,7 +62,7 @@
                     <i class="far fa-star text-rose"></i>
                 <% end %>
               </small>
-              <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
+              <h5><%= part.name_of_star %></h5>
             </div>
           <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
           <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>
@@ -77,7 +77,7 @@
 
 <div class="container-home m-5">
   <div class="d-flex justify-content-between border-bottom-rose">
-    <h2>Or are you more into a cute face?</h2>
+    <h2>Or are you more a sandy person?</h2>
     <%= link_to "Discover the parts", star_parts_path, class: "link-rose"  %>
   </div>
     <ul class="flex-container">
@@ -97,7 +97,7 @@
                     <i class="far fa-star text-rose"></i>
                 <% end %>
               </small>
-              <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
+              <h5><%= part.name_of_star %></h5>
             </div>
           <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
           <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>

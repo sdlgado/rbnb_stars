@@ -3,9 +3,8 @@ class StarPart < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings, dependent: :destroy
   validates :rating, inclusion: { in: [0, 1, 2, 3, 4, 5] }, numericality: { only_integer: true }
-  validates :category, inclusion: { in: ["head", "bust", "bottom"] }, presence: true
+  validates :category, inclusion: { in: ["sand", "tree", "sea"] }, presence: true
   validates :name_of_star, presence: true
-  validates :name_of_part, presence: true
   validates :price, presence: true
   validates :description, presence: true
   validates :address, presence: true
