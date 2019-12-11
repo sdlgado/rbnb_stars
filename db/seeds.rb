@@ -44,7 +44,7 @@ thibaud = User.new({
   username: "Thibaud",
   first_name: "Thibaud",
   last_name: "Allain",
-  email: "thibaud.allain@gmail.com",
+  email: "test@gmail.com",
   password: "azerty"
   })
 file = URI.open('https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80')
@@ -579,12 +579,6 @@ a = Booking.create!(
   star_part_id: kim.id,
   confirmed: "Accepted"
 )
-Review.create!(
-  content: "Gorgeous !",
-  rating: 5,
-  booking_id: a.id,
-  user_id: thibaud.id,
-)
 a = Booking.create!(
   start_date: Time.new(2019, 10, 03),
   end_date: Time.new(2019, 10, 5),
@@ -611,6 +605,20 @@ Review.create!(
   booking_id: a.id,
   user_id: thibaud.id,
 )
+Booking.create!(
+  start_date: Time.new(2020, 10, 03),
+  end_date: Time.new(2020, 10, 5),
+  user_id: thibaud.id,
+  star_part_id: johnny.id,
+  confirmed: "Pending"
+)
+Booking.create!(
+  start_date: Time.new(2020, 10, 03),
+  end_date: Time.new(2020, 10, 5),
+  user_id: thibaud.id,
+  star_part_id: megan.id,
+  confirmed: "Accepted"
+)
 puts "seeds booking thibaud done!"
 
 puts "seeds booking barbara starts"
@@ -620,6 +628,20 @@ a = Booking.create!(
   user_id: barbara.id,
   star_part_id: lebron.id,
   confirmed: "Accepted"
+)
+Booking.create!(
+  start_date: Time.new(2020, 10, 03),
+  end_date: Time.new(2020, 10, 5),
+  user_id: barbara.id,
+  star_part_id: vincent.id,
+  confirmed: "Pending"
+)
+Booking.create!(
+  start_date: Time.new(2020, 10, 03),
+  end_date: Time.new(2020, 10, 5),
+  user_id: barbara.id,
+  star_part_id: kendall.id,
+  confirmed: "Pending"
 )
 Review.create!(
   content: "this was cool !",

@@ -43,7 +43,7 @@
             <% current_user.star_parts.each do |star_part| %>
             <% count += star_part.bookings.select { |b| b.confirmed == "pending" }.length %>
             <% end %>
-            <%= link_to "My parts", parts_path, class: "dropdown-item" %>
+            <%= link_to "My beaches", parts_path, class: "dropdown-item" %>
             <%= link_to pending_path, class: "dropdown-item" do %>
               <p>My pending booking requests <span><%= count %></span></p>
             <% end %>
