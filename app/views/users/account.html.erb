@@ -45,7 +45,7 @@
                   <div class="profil-part-info-text mt-2">
                     <div class="d-flex justify-content-start align-items-start">
                       <div>
-                        <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
+                        <h2><%= booking.star_part.name_of_star %></h2>
                         <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
                         <h3>€ <%= booking.price %></h3>
                       </div>
@@ -82,7 +82,7 @@
                 <%= image_tag booking.star_part.photo, alt: "alttext" %>
               <% end %>
               <div class="profil-part-info-text">
-                <h2><%= booking.star_part.name_of_star %>'s <%= booking.star_part.name_of_part %></h2>
+                <h2><%= booking.star_part.name_of_star %></h2>
                 <h3>From <%= booking.start_date %> - To <%= booking.end_date %></h3>
                 <button type="button" class="link-rose book-again" data-toggle="modal" data-target="#exampleModal<%=count%>" id=<%= booking.star_part.id %>>
                   Book Again
@@ -132,5 +132,5 @@
   </div>
 </div>
 <div class="container mt-2 align-content-center" >
-  <%= link_to "Continue my relooking !", star_parts_path, class: "link-rose", id:"button-back-home" %>
+  <%= link_to "Continue my shopping !", star_parts_path, class: "link-rose", id:"button-back-home" %>
 </div>

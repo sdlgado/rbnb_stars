@@ -17,19 +17,19 @@ const rateIndicator = () => {
   const indic = document.getElementById("indicateur");
   if (starOne && starTwo && starThree && starFour && starFive) {
     starOne.addEventListener("mouseover", () => {
-      indic.innerText = 'As disappointing as the last fashion week';
+      indic.innerText = "It wasn't even sunny…";
     });
     starTwo.addEventListener("mouseover", () => {
-      indic.innerText = 'It was ok but I get the same results when working out';
+      indic.innerText = "It was ok but I have better at home";
     });
     starThree.addEventListener("mouseover", () => {
-      indic.innerText = "Preety good";
+      indic.innerText = "Pretty good";
     });
     starFour.addEventListener("mouseover", () => {
-      indic.innerText = 'It is a real game changer!';
+      indic.innerText = "Great holidays under the sun!";
     });
     starFive.addEventListener("mouseover", () => {
-      indic.innerText = 'Amazing! I was the brightest of all stars indeed';
+      indic.innerText = "Amazing! I am going back next week";
     });
   }
 };

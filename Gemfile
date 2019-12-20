@@ -11,7 +11,6 @@ gem 'pundit'
 gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
 
-
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'

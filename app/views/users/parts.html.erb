@@ -19,7 +19,7 @@
                     <i class="far fa-star text-rose"></i>
                 <% end %>
               </small>
-              <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
+              <h5><%= part.name_of_star %></h5>
             </div>
           <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
           <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>

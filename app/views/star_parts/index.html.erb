@@ -1,5 +1,5 @@
 <div class="card-container mt-3" >
-  <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/assets/landing-e3ca8f6d264a7f8706bf95bfee9f9748ded73dd469b2f755fde193c12c88d52d.png)">
+  <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1540202404-d0c7fe46a087?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2690&q=80')">
       <%= form_tag star_parts_path, method: :get, class: "form-inline" do %>
       <%#= select_tag :category, options_for_select(@star_parts_all.collect{ |s| s.category }.uniq) %>
       <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "" %>
@@ -29,7 +29,7 @@
                   <i class="far fa-star text-rose"></i>
               <% end %>
             </small>
-            <h5><%= part.name_of_star %>'s <%= part.name_of_part.capitalize() %></h5>
+            <h5><%= part.name_of_star %></h5>
           </div>
         <h2 class="card-trip-pricing"> € <%= part.price  %> </h2>
         <%= cl_image_tag(part.user.photo.key, class: "card-trip-user avatar-bordered") %>

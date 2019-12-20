@@ -25,7 +25,7 @@
 
 <%= simple_form_for ([@booking.star_part, @booking, @review]) do |f| %>
   <%= f.input :rating, as: :hidden, input_html: { readonly: true, value: 0 } %>
-  <%= f.input :content, :label => "What did you think about this body part?" %>
+  <%= f.input :content, :label => "What did you think about this playa?" %>
 
 <p style="text-align: center"><%= f.submit "Submit", class: 'bg-rose mr-3'%></p>
 <% end %>

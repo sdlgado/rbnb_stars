@@ -25,7 +25,7 @@ class Booking < ApplicationRecord
   end
 
   def do_not_contain_unavailable_dates
-    star_part = StarPart.find(star_part_id)
+    star_part = StarPart.find(self.star_part_id)
     unavailable = star_part.unavailable_dates
     range = []
     date = start_date
